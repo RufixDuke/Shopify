@@ -54,7 +54,7 @@ function DisplayProducts({ electronics }) {
                         <Link key={electronic.id} href={`${electronic.id}`} passHref>
                                 <div className={styles.card}>
                                     <div className={styles.image}>
-                                        <Image src={electronic.image} alt="Image" width="100%" height="200px" />
+                                        <img src={electronic.image} alt="Image" width="100%" height="200px" />
                                     </div>
                                     <div className={styles.details}>
                                         <h3>{electronic.title}</h3>

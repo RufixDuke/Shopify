@@ -18,11 +18,7 @@ function DisplayProducts({ electronics }) {
             <header className={classes.header}>
                 <div className={classes.nav}>
                     {/* <img src="" alt="logo" /> */}
-                    <Image
-                        src={'/../../../../Downloads/cdc-Vqt9v7v6g44-unsplash.jpg'}
-                        alt="Logo"
-                        width={100}
-                        height={100} />
+                    <Image src="/image.jpg" alt="Logo" width="100%" height="100%" />
                 </div>
 
                 <div>
@@ -52,17 +48,17 @@ function DisplayProducts({ electronics }) {
                 {electronics.map((electronic) => {
                     return (
                         <Link key={electronic.id} href={`${electronic.id}`} passHref>
-                                <div className={styles.card}>
-                                    <div className={styles.image}>
-                                        <img src={electronic.image} alt="Image" width="100%" height="200px" />
-                                    </div>
-                                    <div className={styles.details}>
-                                        <h3>{electronic.title}</h3>
-                                        <p>${electronic.price}</p>
-                                        {/* <p>{electronic.category}</p>
-                                <p>{electronic.description}</p> */}
-                                    </div>
+                            <div className={styles.card}>
+                                <div className={styles.image}>
+                                    <img src={electronic.image} alt="Image" width="100%" height="200px" />
                                 </div>
+                                <div className={styles.details}>
+                                    <h3>{electronic.title}</h3>
+                                    <p>${electronic.price}</p>
+                                    {/* <p>{electronic.category}</p>
+                                <p>{electronic.description}</p> */}
+                                </div>
+                            </div>
                         </Link>
                     )
                 })}

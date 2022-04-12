@@ -16,40 +16,25 @@ function OneElectronic({ electronic }) {
     )
 }
 
-// export async function getServerSideProps(context) {
-//     const { id } = context.params;
-//     const res = await fetch(`https://fakestoreapi.com/products/category/electronics/${id}`)
-//     const data = await res.json(); 
+export async function getStaticPaths() {
+    const response = await fetch('https://fakestoreapi.com/products/category/electronics')
+    const data = await response.json()
 
-//     console.log(`Fetched data: ${data.title}`);
-//     return {
-//         props: {
-//             electronic: data,
-//         }
-//     }
-// }
-
-// export async function getStaticPaths() {
-//     const response = await fetch('https://fakestoreapi.com/products/category/electronics')
-//     const data = await response.json()
-
-//     const paths = data.map((electronic) => {
-//         return {
-//             params: {
-//                 id: electronic.id.toString()
-//             }
-//         }
-//     })
-
-
-//     return {
-//         paths,
-//         fallback: false,
-//     }
-// }
+    const paths = data.map((electronic) => {
+        return {
+            params: {
+                Eid: electronic.id.toString()
+            }
+        }
+    })
+    return {
+        paths,
+        fallback: false,
+    }
+}
 
 export async function getStaticProps(context) {
-    const id = context.params.id;
+    const id = context.params.Eid;
     console.log(id)
     const response = await fetch(`https://fakestoreapi.com/products/category/electronics/${id}`)
     const data = await response.json()

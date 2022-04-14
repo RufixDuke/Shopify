@@ -7,10 +7,7 @@ function MainNav() {
     return (
         <>
             <header className={classes.header}>
-                <div className={classes.nav}>
-                    {/* <img src="" alt="logo" /> */}
-                    <Image src={Logo} alt="Logo" width="100%" height='100%' />
-                </div>
+                <Image src={Logo} alt="Logo" width="100px" height="100px" />
 
                 <div>
                     <nav className={classes.links}>

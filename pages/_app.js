@@ -1,15 +1,11 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout/Layout'
-import Home from './index'
 
-function MyApp({ pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
-    <>
       <Layout>
-        <Home />
+        <Component {...pageProps} />
     </Layout>
-    </>
-    
   )
 }
 

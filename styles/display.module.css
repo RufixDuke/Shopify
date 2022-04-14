@@ -9,27 +9,6 @@
     grid-column-end: 3;
 }
 
-.card {
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 10px;
-    background-color: rgb(245, 240, 240);
-    /* padding: 20px; */
-    cursor: pointer;
-    transition: transform 0.3s ease-out ;
-    /* padding: 10px; */
-}
-
-.card:hover {
-    transform: scale(0.97);
-}
-
-.details {
-width: auto;
-padding: 10px;
-}
-
 .head {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;

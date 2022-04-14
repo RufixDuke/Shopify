@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     const paths = data.map((electronic) => {
         return {
             params: {
-                Eid: electronic.id.toString()
+                eid: electronic.id.toString()
             }
         }
     })
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const id = context.params.Eid;
+    const id = context.params.eid.toString()
     console.log(id)
     const response = await fetch(`https://fakestoreapi.com/products/category/electronics/${id}`)
     const data = await response.json()

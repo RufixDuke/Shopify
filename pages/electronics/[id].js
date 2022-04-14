@@ -1,6 +1,10 @@
 import Image from 'next/image'
+import {useRouter} from 'next/router';
 
 function OneElectronic({ electronic }) {
+    const router = useRouter();
+
+    const electId = router.query.id;
     return (
         <>
             <div>Hiiiiiiiii</div>
@@ -12,50 +16,36 @@ function OneElectronic({ electronic }) {
     )
 }
 
-export async function getServerSideProps(context) {
-    const { id } = context.params;
-    const res = await fetch(`https://fakestoreapi.com/products/category/electronics/${id}`)
-    const data = await res.json(); 
+export async function getStaticPaths() {
+    const response = await fetch('https://fakestoreapi.com/products/category/electronics')
+    const data = await response.json()
 
-    console.log(`Fetched data: ${data.title}`);
+    const paths = data.map((electronic) => {
+        return {
+            params: {
+                eid: electronic.id.toString()
+            }
+        }
+    })
     return {
+        paths,
+        fallback: false,
+    }
+}
+
+export async function getStaticProps(context) {
+    const id = context.params.eid.toString()
+    console.log(id)
+    const response = await fetch(`https://fakestoreapi.com/products/category/electronics/${id}`)
+    const data = await response.json()
+    // console.log(data);
+
+    return { 
         props: {
             electronic: data,
         }
     }
 }
-
-// export async function getStaticPaths() {
-//     const response = await fetch('https://fakestoreapi.com/products/category/electronics')
-//     const data = await response.json()
-
-//     const paths = data.map((electronic) => {
-//         return {
-//             params: {
-//                 electronicId: electronic.id.toString()
-//             }
-//         }
-//     })
-
-
-//     return {
-//         paths,
-//         fallback: false,
-//     }
-// }
-
-// export async function getStaticProps(context) {
-//     const id = context.params.electronicId;
-//     const response = await fetch(`https://fakestoreapi.com/products/category/electronics/${id}`)
-//     const data = await response.json()
-//     // console.log(data);
-
-//     return { 
-//         props: {
-//             electronic: data,
-//         }
-//     }
-// }
 
 
 

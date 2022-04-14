@@ -1,12 +1,10 @@
 import styles from '../../styles/display.module.css';
 import Head from 'next/head'
-import classes from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
 
 function DisplayProducts({ electronics }) {
-
     return (
         <>
             <Head>
@@ -15,54 +13,22 @@ function DisplayProducts({ electronics }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <header className={classes.header}>
-                <div className={classes.nav}>
-                    {/* <img src="" alt="logo" /> */}
-                    <Image
-                        src={'/../../../../Downloads/cdc-Vqt9v7v6g44-unsplash.jpg'}
-                        alt="Logo"
-                        width={100}
-                        height={100} />
-                </div>
-
-                <div>
-                    <nav className={classes.links}>
-                        <Link href="/electronics">
-                            <a className={classes.subnav}>Electronics</a>
-                        </Link>
-                        <Link href="/jewelery">
-                            <a className={classes.subnav}>Jewelery</a>
-                        </Link>
-                        <Link href='/men'>
-                            <a className={classes.subnav}>For Men</a>
-                        </Link>
-                        <Link href='/women'>
-                            <a className={classes.subnav}>For Women</a>
-                        </Link>
-                    </nav>
-                </div>
-
-                <div>
-                    Contact Us
-                </div>
-            </header>
-
             <h1 className={styles.head}>These are the available Electronic gadgets</h1>
             <div className={styles.cards}>
                 {electronics.map((electronic) => {
                     return (
-                        <Link key={electronic.id} href={`${electronic.id}`} passHref>
-                                <div className={styles.card}>
-                                    <div className={styles.image}>
-                                        <Image src={electronic.image} alt="Image" width="100%" height="200px" />
-                                    </div>
-                                    <div className={styles.details}>
-                                        <h3>{electronic.title}</h3>
-                                        <p>${electronic.price}</p>
-                                        {/* <p>{electronic.category}</p>
-                                <p>{electronic.description}</p> */}
-                                    </div>
+                        <Link key={electronic.id} href={`/electronics/${electronic.id}`} passHref>
+                            <div className={styles.card}>
+                                <div className={styles.image}>
+                                    <img src={electronic.image} alt="Image" width="100%" height="200px" />
                                 </div>
+                                <div className={styles.details}>
+                                    <h3>{electronic.title}</h3>
+                                    <p>${electronic.price}</p>
+                                    {/* <p>{electronic.category}</p>
+                                <p>{electronic.description}</p> */}
+                                </div>
+                            </div>
                         </Link>
                     )
                 })}

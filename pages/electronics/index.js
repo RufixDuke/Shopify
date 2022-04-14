@@ -18,7 +18,7 @@ function DisplayProducts({ electronics }) {
             <header className={classes.header}>
                 <div className={classes.nav}>
                     {/* <img src="" alt="logo" /> */}
-                    {/* <Image src="/image.jpg" alt="Logo" width="100%" height="100%" /> */}
+                    <Image src="/image.jpg" alt="Logo" width="100%" height="100%" />
                 </div>
 
                 <div>

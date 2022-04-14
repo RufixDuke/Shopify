@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 25px;
+  background-color: rgb(245, 241, 241);
+  color: rgb(116, 113, 113);
+}
+
+/* .nav {
+  width: 100%;
+  
+} */
+
+.subnav {
+  margin-right: 10px;
+}
+
+.subnav:hover {
+  color: rgb(33, 156, 197);
+}
+
+.hero {
+  background-color: black;
+  min-height: 35vh;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact:hover {
+  color: gray;
+  text-decoration: underline;
+}

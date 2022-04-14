@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
-  padding: 25px;
+  padding: 20px;
   background-color: rgb(245, 241, 241);
   color: rgb(116, 113, 113);
 }
@@ -34,4 +34,8 @@
 .contact:hover {
   color: gray;
   text-decoration: underline;
+}
+
+.links {
+    display: block;
 }

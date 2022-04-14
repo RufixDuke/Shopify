@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-
+import Logo from "../../public/Free-Logo-Design-Template-for-Online-Store-PNG-transparent.png"
 import classes from './MainNav.module.css';
 
 function MainNav() {
@@ -9,7 +9,7 @@ function MainNav() {
             <header className={classes.header}>
                 <div className={classes.nav}>
                     {/* <img src="" alt="logo" /> */}
-                    <Image src="/image.jpg" alt="Logo" width="100%" height="100%" />
+                    <Image src={Logo} alt="Logo" width="100%" height='100%' />
                 </div>
 
                 <div>

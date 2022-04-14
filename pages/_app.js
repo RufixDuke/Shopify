@@ -1,15 +1,11 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout/Layout'
-import { Component } from 'react'
 
-function MyApp({ pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
-    <>
       <Layout>
         <Component {...pageProps} />
     </Layout>
-    </>
-    
   )
 }
 

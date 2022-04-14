@@ -26,9 +26,7 @@ function DisplayProducts({ electronics }) {
 
 
 export async function getStaticProps() {
-    const response = await fetch('https://fakestoreapi.com/products/category/electronics')
-    const data = await response.json();
-
+    const data = await fetch('https://fakestoreapi.com/products/category/electronics').then(data => data.json())
     return {
         props: {
             electronics: data,

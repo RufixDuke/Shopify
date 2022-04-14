@@ -1,7 +1,7 @@
 import styles from '../../styles/display.module.css';
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
+import Electronic from '../../components/Electronic/Electronic'
 
 
 function DisplayProducts({ electronics }) {
@@ -15,28 +15,15 @@ function DisplayProducts({ electronics }) {
 
             <h1 className={styles.head}>These are the available Electronic gadgets</h1>
             <div className={styles.cards}>
-                {electronics.map((electronic) => {
-                    return (
-                        <Link key={electronic.id} href={`/electronics/${electronic.id}`} passHref>
-                            <div className={styles.card}>
-                                <div className={styles.image}>
-                                    <img src={electronic.image} alt="Image" width="100%" height="200px" />
-                                </div>
-                                <div className={styles.details}>
-                                    <h3>{electronic.title}</h3>
-                                    <p>${electronic.price}</p>
-                                    {/* <p>{electronic.category}</p>
-                                <p>{electronic.description}</p> */}
-                                </div>
-                            </div>
-                        </Link>
-                    )
-                })}
+                {electronics.map((electronic) => (
+                    <Electronic key={electronic.id} electronic={electronic} />
+                ))}
             </div>
 
         </>
     )
 }
+
 
 export async function getStaticProps() {
     const response = await fetch('https://fakestoreapi.com/products/category/electronics')
@@ -47,7 +34,6 @@ export async function getStaticProps() {
             electronics: data,
         }
     }
-
 }
 
 export default DisplayProducts;

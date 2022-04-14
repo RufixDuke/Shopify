@@ -4,10 +4,10 @@ import classes from './Layout.module.css'
 
 function Layout(props) {
     return (
-        <>
+        <div>
             <MainNav />
             <main className={classes.Layout}>{props.children}</main>
-        </>
+        </div>
     )
 }
 

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Input from '../../components/Input/Input';
 import { useState } from 'react'
 import Button from '../../components/Button/Button';
+import { updateObject } from './utility';
 
 function Authentication() {
     const initialState = {
@@ -45,36 +46,38 @@ function Authentication() {
         }
     )
 
+    const authLogout = (initialState, action) => {
+        return updateObject(initialState, { token: null, userId: null });
+    };
+
     const logout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('expirationDate');
         localStorage.removeItem('userId');
-        return {
-            type: actionTypes.AUTH_LOGOUT
-        };
+        return authLogout(initialState, action)
     };
 
     const checkAuthTimeout = (expirationTime) => {
-        return dispatch => {
+        return (() =>
             setTimeout(() => {
                 logout();
-            }, expirationTime * 1000);
-        };
+            }, expirationTime * 1000)
+        )
     };
 
-    const authFail = (state, action) => {
-        return updateObject(state, {
+    const authFail = (initialState, action) => {
+        return updateObject(initialState, {
             error: action.error,
             loading: false
         });
     };
 
-    const authStart = (state, action) => {
-        return updateObject(state, { error: null, loading: true });
+    const authStart = (initialState, action) => {
+        return updateObject(initialState, { error: null, loading: true });
     };
 
-    const authSuccess = (state, action) => {
-        return updateObject(state, {
+    const authSuccess = (initialState, action) => {
+        return updateObject(initialState, {
             token: action.idToken,
             userId: action.userId,
             error: null,
@@ -83,8 +86,8 @@ function Authentication() {
     };
 
     const auth = (email, password, isSignup) => {
-        return dispatch => {
-            dispatch(authStart());
+        return (() => {
+            authStart();
             const authData = {
                 email: email,
                 password: password,
@@ -101,13 +104,14 @@ function Authentication() {
                     localStorage.setItem('token', response.data.idToken);
                     localStorage.setItem('expirationDate', expirationDate);
                     localStorage.setItem('userId', response.data.localId);
-                    dispatch(authSuccess(response.data.idToken, response.data.localId));
-                    dispatch(checkAuthTimeout(response.data.expiresIn));
+                    authSuccess(response.data.idToken, response.data.localId);
+                    checkAuthTimeout(response.data.expiresIn);
                 })
                 .catch(err => {
-                    dispatch(authFail(err.response.data.error));
+                    authFail(err.response.data.error);
                 });
-        };
+        }
+        )
     };
 
     const checkValidity = (value, rules) => {
@@ -145,10 +149,6 @@ function Authentication() {
         event.preventDefault();
         auth(controls.email.value, controls.password.value, isSignup);
     }
-
-    // const inputHandler = (e) => {
-    //     setInput(e.target.value)
-    // }
 
     const inputChangedHandler = (event, controlName) => {
         const updatedControls = {

@@ -1,23 +1,23 @@
 import Image from 'next/image'
 
-function JeweleryOne({ electronic }) {
+function JeweleryOne({ jewelery }) {
     return (
         <>
             <div>Hiiiiiiiii</div>
-            <div key={electronic.id}>
-                <Image src={electronic.image} width={75} height={67} alt="image" />
-                <h3>{electronic.title}</h3>
+            <div key={jewelery.id}>
+                <Image src={jewelery.image} width={75} height={67} alt="image" />
+                <h3>{jewelery.title}</h3>
             </div>
         </>
     )
 }
 
 export async function getStaticPaths() {
-    const paths = await fetch(`https://fakestoreapi.com/products/category/jewe`)
+    const paths = await fetch(`https://fakestoreapi.com/products/category/jewelery`)
         .then(res => res.json())
-        .then(data => data.map(electronic => ({
+        .then(data => data.map(jewelery => ({
             params: {
-                id: electronic.id.toString()
+                id: jewelery.id.toString()
             }
         }
         )))
@@ -30,13 +30,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     const id = context.params.id
-    const data = await fetch(`https://fakestoreapi.com/products/category/electronics`)
+    const data = await fetch(`https://fakestoreapi.com/products/category/jewelery`)
         .then(res => res.json())
         .then(res => res.filter(item => (item.id == id))[0])
 
     return {
         props: {
-            electronic: data,
+            jewelery: data,
         }
     }
 }

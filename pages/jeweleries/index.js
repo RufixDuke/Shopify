@@ -1,4 +1,4 @@
-import styles from '../styles/display.module.css';
+import styles from '../../styles/display.module.css';
 import Head from 'next/head'
 import OneJewelery from '../../components/Jewelery/Jewelery';
 

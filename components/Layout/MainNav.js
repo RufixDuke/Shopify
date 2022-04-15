@@ -27,7 +27,11 @@ function MainNav() {
                 </div>
 
                 <div>
-                    Contact Us
+                    <nav className={classes.links}>
+                        <Link href='/auth'>
+                            <a className={classes.subnav}>Login | Sign Up</a>
+                        </Link>
+                    </nav>
                 </div>
             </header>
         </>

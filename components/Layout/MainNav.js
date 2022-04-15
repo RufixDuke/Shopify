@@ -14,7 +14,7 @@ function MainNav() {
                         <Link href="/electronics">
                             <a className={classes.subnav}>Electronics</a>
                         </Link>
-                        <Link href="/jewelery">
+                        <Link href="/jeweleries">
                             <a className={classes.subnav}>Jewelery</a>
                         </Link>
                         <Link href='/men'>

@@ -1,10 +1,6 @@
 import Image from 'next/image'
-import { useRouter } from 'next/router';
 
 function OneElectronic({ electronic }) {
-    const router = useRouter();
-
-    const electId = router.query.id;
     return (
         <>
             <div>Hiiiiiiiii</div>

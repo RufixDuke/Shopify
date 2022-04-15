@@ -32,8 +32,7 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps(context) {
-    const id = context.params.id
+export async function getStaticProps({params: {id}}) {
     const data = await fetch(`https://fakestoreapi.com/products/category/electronics`)
         .then(res => res.json())
         .then(res => res.filter(item=> (item.id==id))[0])

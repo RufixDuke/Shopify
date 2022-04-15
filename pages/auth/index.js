@@ -1,43 +1,114 @@
 import Head from 'next/head';
 import Input from '../../components/Input/Input';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import Button from '../../components/Button/Button';
 
 function Authentication() {
+    const initialState = {
+        token: null,
+        userId: null,
+        error: null,
+        loading: false,
+        authRedirectPath: '/'
+    };
     const [isSignup, setIsSignUp] = useState(true)
-    const [input, setInput] = useState(
+    const [controls, setControls] = useState(
         {
-            controls: {
-                email: {
-                    elementType: 'input',
-                    elementConfig: {
-                        type: 'email',
-                        placeholder: 'Mail Address'
-                    },
-                    value: '',
-                    validation: {
-                        required: true,
-                        isEmail: true
-                    },
-                    valid: false,
-                    touched: false
+            email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                    placeholder: 'Mail Address'
                 },
-                password: {
-                    elementType: 'input',
-                    elementConfig: {
-                        type: 'password',
-                        placeholder: 'Password'
-                    },
-                    value: '',
-                    validation: {
-                        required: true,
-                        minLength: 6
-                    },
-                    valid: false,
-                    touched: false
-                }
+                value: '',
+                validation: {
+                    required: true,
+                    isEmail: true
+                },
+                valid: false,
+                touched: false
+            },
+            password: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'password',
+                    placeholder: 'Password'
+                },
+                value: '',
+                validation: {
+                    required: true,
+                    minLength: 6
+                },
+                valid: false,
+                touched: false
             }
         }
     )
+
+    const logout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('expirationDate');
+        localStorage.removeItem('userId');
+        return {
+            type: actionTypes.AUTH_LOGOUT
+        };
+    };
+
+    const checkAuthTimeout = (expirationTime) => {
+        return dispatch => {
+            setTimeout(() => {
+                logout();
+            }, expirationTime * 1000);
+        };
+    };
+
+    const authFail = (state, action) => {
+        return updateObject(state, {
+            error: action.error,
+            loading: false
+        });
+    };
+
+    const authStart = (state, action) => {
+        return updateObject(state, { error: null, loading: true });
+    };
+
+    const authSuccess = (state, action) => {
+        return updateObject(state, {
+            token: action.idToken,
+            userId: action.userId,
+            error: null,
+            loading: false
+        });
+    };
+
+    const auth = (email, password, isSignup) => {
+        return dispatch => {
+            dispatch(authStart());
+            const authData = {
+                email: email,
+                password: password,
+                returnSecureToken: true
+            };
+            let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
+            if (!isSignup) {
+                url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
+            }
+            axios.post(url, authData)
+                .then(response => {
+                    console.log(response);
+                    const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+                    localStorage.setItem('token', response.data.idToken);
+                    localStorage.setItem('expirationDate', expirationDate);
+                    localStorage.setItem('userId', response.data.localId);
+                    dispatch(authSuccess(response.data.idToken, response.data.localId));
+                    dispatch(checkAuthTimeout(response.data.expiresIn));
+                })
+                .catch(err => {
+                    dispatch(authFail(err.response.data.error));
+                });
+        };
+    };
 
     const checkValidity = (value, rules) => {
         let isValid = true;
@@ -70,25 +141,34 @@ function Authentication() {
         return isValid;
     }
 
-    const submitHandler = e => (
-        e.preventDefault()
-    )
-
-    const inputHandler = (e) => {
-        setInput(e.target.value)
+    const submitHandler = (event) => {
+        event.preventDefault();
+        auth(controls.email.value, controls.password.value, isSignup);
     }
 
-    inputChangedHandler = (event, controlName) => {
+    // const inputHandler = (e) => {
+    //     setInput(e.target.value)
+    // }
+
+    const inputChangedHandler = (event, controlName) => {
         const updatedControls = {
-            ...this.state.controls,
+            ...controls,
             [controlName]: {
-                ...this.state.controls[controlName],
+                ...controls[controlName],
                 value: event.target.value,
-                valid: this.checkValidity(event.target.value, this.state.controls[controlName].validation),
+                valid: checkValidity(event.target.value, controls[controlName].validation),
                 touched: true
             }
         };
-        this.setState({ controls: updatedControls });
+        setControls({ controls: updatedControls });
+    }
+
+    const formElementsArray = [];
+    for (let key in controls) {
+        formElementsArray.push({
+            id: key,
+            config: controls[key]
+        });
     }
 
     let form = formElementsArray.map(formElement => (
@@ -100,8 +180,14 @@ function Authentication() {
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
             touched={formElement.config.touched}
-            changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+            changed={(event) => inputChangedHandler(event, formElement.id)} />
     ));
+
+    const switchAuthModeHandler = () => {
+        setIsSignUp(prevState => {
+            return { isSignup: !prevState.isSignup };
+        });
+    }
 
 
 
@@ -115,20 +201,14 @@ function Authentication() {
 
             <div className=''>
                 <form onSubmit={submitHandler}>
-                    <label>Email: </label>
-                    <input
-                        type="email"
-                        value={input}
-                        onChange={(event) => this.inputChangedHandler(event, formElement.id)}
-                        placeholder='Enter your email here' />
-
-                    <label>Password: </label>
-                    <input
-                        type="password"
-                        value={input}
-                        onChange={inputHandler}
-                        placeholder='Enter your password here' />
+                    {form}
+                    <Button btnType="Success">SUBMIT</Button>
                 </form>
+
+                <Button
+                    clicked={switchAuthModeHandler}
+                    btnType="Danger">SWITCH TO {isSignup ? 'SIGNIN' : 'SIGNUP'}
+                </Button>
             </div>
         </>
     )

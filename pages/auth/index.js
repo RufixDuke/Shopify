@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Input from '../../components/Input/Input';
 import { useState } from 'react'
 import Button from '../../components/Button/Button';
-import { updateObject } from './utility';
+import { updateObject } from '../../components/utility';
 import classes from '../../styles/Auth.module.css'
 
 function Authentication() {
@@ -181,7 +181,7 @@ function Authentication() {
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
             touched={formElement.config.touched}
-            changed={(event) => inputChangedHandler(event, formElement.id)}
+            // changed={(event) => inputChangedHandler(event, formElement.id)}
         />
     ));
 

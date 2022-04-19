@@ -1,13 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from "../../public/Free-Logo-Design-Template-for-Online-Store-PNG-transparent.png"
+import Logo from "../../public/—Pngtree—business logo design free logo_915991.png"
 import classes from './MainNav.module.css';
 
 function MainNav() {
     return (
         <>
             <header className={classes.header}>
-                <Image src={Logo} alt="Logo" width="100px" height="100px" />
+                <div>
+                {/* Logo */}
+                    <Image src={Logo} className={classes.img} alt="Logo" width="47%" height="47vh"/>
+                </div>
+
 
                 <div>
                     <nav className={classes.links}>

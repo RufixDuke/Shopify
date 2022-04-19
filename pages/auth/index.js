@@ -164,7 +164,7 @@ function Authentication() {
         setControls({ controls: updatedControls });
     }
 
-    const formElementsArray = [];
+    let formElementsArray = [];
     for (let key in controls) {
         formElementsArray.push({
             id: key,
@@ -181,7 +181,7 @@ function Authentication() {
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
             touched={formElement.config.touched}
-            // changed={(event) => inputChangedHandler(event, formElement.id)}
+            changed={(event) => inputChangedHandler(event, formElement.id)}
         />
     ));
 

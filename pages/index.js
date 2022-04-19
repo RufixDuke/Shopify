@@ -16,7 +16,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div>
-            <h2>DUKE WEB SHOP</h2>
+            <h2>Discover <span className={classes.yellow}>The Best</span> Accessories For <span className={classes.bolde}>Your Interior</span></h2>
           </div>
 
           <div>

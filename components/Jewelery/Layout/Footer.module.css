@@ -1,0 +1,26 @@
+.Footer {
+    padding: 30px;
+}
+
+.Nahhh {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.First p {
+    font-size: 12px;
+}
+
+.First h3 {
+    margin-bottom: 40px;
+}
+
+.First a {
+    margin: 10px;
+}
+
+.copyright {
+    margin-top: 20px;
+    margin-left: 50px;
+}

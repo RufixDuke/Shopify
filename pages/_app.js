@@ -1,9 +1,5 @@
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false;
-
 import '../styles/globals.css'
-import Layout from '../components/Layout/Layout'
+import Layout from '../components/Jewelery/Layout/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (

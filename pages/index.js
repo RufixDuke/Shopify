@@ -3,6 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+
+import Phone from '../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -16,11 +21,23 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div>
-            <h2>Discover <span className={classes.yellow}>The Best</span> Accessories For <span className={classes.bolde}>Your Interior</span></h2>
+            <h2>Discover <span className={styles.yellow}>The Best</span> Accessories For <span className={styles.bolden}>Your Interior</span></h2>
+            <p>we sell accessories that perfectly gap between beauty and functionality</p>
+
+            <Link href='/electronics' passHref>
+              <button className={styles.btn}>
+                Shop Now
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleRight}
+                  style={{ fontSize: 50, marginLeft: 10, color: 'yellow' }}
+                />
+              </button>
+            </Link>
+
           </div>
 
           <div>
-            <p>Start learning web development right now</p>
+            <Image src={Phone} width='100%' height={100} />
             <Link href='/contact'>
               <a className={styles.contact}>Read More</a>
             </Link>

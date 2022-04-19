@@ -28,9 +28,8 @@
 }
 
 .hero {
-  background-color: black;
   min-height: 35vh;
-  color: white;
+  color: black;
   font-family: sans-serif;
   display: flex;
   justify-content: space-around;
@@ -40,4 +39,31 @@
 .contact:hover {
   color: gray;
   text-decoration: underline;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.bolden {
+  font-weight: bold;
+}
+
+.btn {
+  background-color: rgb(5, 40, 63);
+  color: white;
+  padding: 7px 25px;
+  border: 0;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+}
+
+.btn:hover {
+  transform: scaleX(0.97);
+}
+
+.hero p {
+  text-transform: capitalize;
 }

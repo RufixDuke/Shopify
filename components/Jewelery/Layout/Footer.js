@@ -1,15 +1,10 @@
-import Insta from '../../public/instagram-logo1.png'
-import Fb from '../../public/bTyxx8znc.png'
-import LinkedIn from '../../public/img_219961.png'
-import Behance from '../../public/e6d0be0e834a26508e0696af13a63428.jpg'
+import Insta from '../../../public/instagram-logo1.png'
+import Fb from '../../../public/bTyxx8znc.png'
+import LinkedIn from '../../../public/img_219961.png'
+import Behance from '../../../public/e6d0be0e834a26508e0696af13a63428.jpg'
 import Image from 'next/image'
 import classes from './Footer.module.css'
 
-
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
 
 function Footer() {
     return (

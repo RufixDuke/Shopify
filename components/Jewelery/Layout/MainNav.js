@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from "../../public/—Pngtree—business logo design free logo_915991.png"
+import Logo from "../../../public/—Pngtree—business logo design free logo_915991.png"
 import classes from './MainNav.module.css';
 
 function MainNav() {

@@ -2,13 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import HomePage from '../components/HomePage/HomePage'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 import Phone from '../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
 
-export default function Home() {
+export default function Home({products}) {
+  let sliced = products.slice(1, 11)
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +26,7 @@ export default function Home() {
             <h2>Discover <span className={styles.yellow}>The Best</span> Accessories For <span className={styles.bolden}>Your Interior</span></h2>
             <p>we sell accessories that perfectly gap between beauty and functionality</p>
 
-            <Link href='/electronics' passHref>
+            <Link href='/electronics'>
               <button className={styles.btn}>
                 Shop Now
                 <FontAwesomeIcon
@@ -43,7 +45,29 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        <div className={styles.display}>
+          <h3 className={styles.bolden}>a huge collection of accessories for your fashion and use</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
+
+          <h2>Our Products at a Glance</h2>
+          <div className={styles.cards}>
+            {sliced.map((product) => (
+              <HomePage key={product.id} product={product} />
+            ))}
+          </div>
+
+        </div>
       </main>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const data = await fetch('https://fakestoreapi.com/products').then(data => data.json())
+  return {
+    props: {
+      products: data,
+    }
+  }
 }

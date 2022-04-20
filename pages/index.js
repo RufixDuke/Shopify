@@ -10,7 +10,9 @@ import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 import Phone from '../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
 
 export default function Home({ products }) {
+  
   let sliced = products.slice(1, 11)
+
   return (
     <div className={styles.container}>
       <Head>

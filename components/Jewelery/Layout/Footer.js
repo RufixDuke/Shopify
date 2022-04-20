@@ -15,7 +15,7 @@ function Footer() {
                         <h3>Logo</h3>
                         <p>Sophisticated simplicity is for the <br /> independent mind</p>
                         <div>
-                            <a  href="https://www.instagram.com" passHref>
+                            <a  href="https://www.instagram.com">
                                 <Image src={Insta} width={20} height={20} />
                             </a>
 

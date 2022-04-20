@@ -7,15 +7,15 @@ import classes from './Star.module.css'
 function Star({rating}) {
     const starTotal = 5;
 
-    for (let rat=0; rat < rating.length; rat++) {
+    // for (let rat = 0; rat < rating.length; rat++) {
         
-        const starPercentage = (rating[rat] / starTotal) * 100;
+        const starPercentage = (rating / starTotal) * 100;
         
         const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
         
-        document.querySelector(`.${rat} .star`).style.width = starPercentageRounded;
+        document.querySelector(`.${rating} .star`).style.width = starPercentageRounded;
         
-    }
+    // }
     console.log(rating)
 
     return (

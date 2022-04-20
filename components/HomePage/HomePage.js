@@ -5,6 +5,7 @@ import styles from './HomePage.module.css'
 import Star from './Star/Star'
 
 function HomePage({ product }) {
+    // let rating = [product.rating]
     let a = product.price
     let b = Number(a)
     let c = b * 0.15

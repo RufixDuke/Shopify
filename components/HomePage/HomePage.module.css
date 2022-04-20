@@ -1,9 +1,12 @@
-.container {
+/* .container {
     padding: 2px 16px;
-}
+} */
 
-img {
-    
+.img {
+    height: 150px;
+    /* width: 150px; */
+    object-fit: contain;
+    margin: 0 auto;
 }
 
 .card {
@@ -11,7 +14,7 @@ img {
     height: 50vh;
     display: block;
     margin: 10px;
-    background-color: rgb(245, 240, 240);
+    /* background-color: rgb(243, 243, 243); */
     /* padding: 20px; */
     cursor: pointer;
     transition: transform 0.3s ease-out ;
@@ -20,4 +23,17 @@ img {
 
 .card:hover {
     transform: scale(0.97);
+}
+
+.price {
+    display: flex;
+}
+
+.gray {
+    color: rgb(221, 221, 221);
+    margin-right: 15px;
+}
+
+.green {
+    color: rgb(71, 219, 71);
 }

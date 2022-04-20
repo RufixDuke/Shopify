@@ -3,6 +3,9 @@ import Link from 'next/link'
 
 import styles from './HomePage.module.css'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 function HomePage({ product }) {
     let a = product.price
     let b = Number(a)
@@ -12,10 +15,16 @@ function HomePage({ product }) {
         <>
             <Link href={`/${product.category}/${product.id}`} passHref>
                 <div className={styles.card}>
-                    <img src={product.image} alt={product.title} width='100%'/>
+                    <img className={styles.img} src={product.image} alt={product.title} width='100%' />
                     <div className={styles.container}>
                         <p>{product.title}</p>
-                        <p>{c}</p>
+                        <div className={styles.price}>
+                            <p className={styles.gray}>${product.price}</p>
+                            <p className={styles.green}>${c}</p>
+                        </div>
+                        <div className="stars-outer">
+                            <div className="stars-inner"></div>
+                        </div>
                     </div>
                 </div>
             </Link>

@@ -9,7 +9,7 @@ import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 import Phone from '../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
 
-export default function Home({products}) {
+export default function Home({ products }) {
   let sliced = products.slice(1, 11)
   return (
     <div className={styles.container}>
@@ -47,7 +47,9 @@ export default function Home({products}) {
         </div>
 
         <div className={styles.display}>
-          <h3 className={styles.bolden}>a huge collection of accessories for your fashion and use</h3>
+          <h3 className={styles.bolden}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Doloremque corrupti explicabo quas quisquam cupiditate quaerat necessitatibus eius voluptates
+            provident voluptatum.</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
 
           <h2>Our Products at a Glance</h2>

@@ -2,9 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './HomePage.module.css'
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Star from './Star/Star'
 
 function HomePage({ product }) {
     let a = product.price
@@ -20,10 +18,10 @@ function HomePage({ product }) {
                         <p>{product.title}</p>
                         <div className={styles.price}>
                             <p className={styles.gray}>${product.price}</p>
-                            <p className={styles.green}>${c}</p>
+                            <p className={styles.green}>${c.toFixed(2)}</p>
                         </div>
-                        <div className="stars-outer">
-                            <div className="stars-inner"></div>
+                        <div className={styles.starsOuter}>
+                            <Star rating={product.rating.rate} />
                         </div>
                     </div>
                 </div>

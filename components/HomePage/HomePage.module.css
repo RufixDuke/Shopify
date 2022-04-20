@@ -1,6 +1,8 @@
-/* .container {
+.container {
     padding: 2px 16px;
-} */
+    /* background-color: rgb(230, 230, 230); */
+    border-radius: 0 0 5px 5px;
+}
 
 .img {
     height: 150px;
@@ -13,19 +15,21 @@
     height: auto;
     display: block;
     margin: 10px;
-    /* background-color: rgb(243, 243, 243); */
-    /* padding: 20px; */
+    padding: 10px;
+    background-color: white;
     cursor: pointer;
     transition: transform 0.3s ease-out ;
-    /* padding: 10px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card:hover {
     transform: scale(0.97);
+    background-color: lightblue;
 }
 
 .price {
     display: flex;
+    justify-content: center;
 }
 
 .gray {
@@ -38,10 +42,11 @@
 }
 
 .starsOuter {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
 }
+
  
 /* .starsOuter::before {
   content: "\f006 \f006 \f006 \f006 \f006";

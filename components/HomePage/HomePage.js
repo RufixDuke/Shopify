@@ -16,14 +16,15 @@ function HomePage({ product }) {
                 <div className={styles.card}>
                     <img className={styles.img} src={product.image} alt={product.title} width='100%' />
                     <div className={styles.container}>
-                        <p>{product.title}</p>
+                        <p>{product.title.length > 20 ? `${product.title.slice(0, 20)}...` : product.title}</p>
                         <div className={styles.price}>
                             <p className={styles.gray}>${product.price}</p>
                             <p className={styles.green}>${c.toFixed(2)}</p>
                         </div>
-                        <div className={styles.starsOuter}>
+                        <p>{product.description.length > 20 ? `${product.description.slice(0, 20)}...` : product.description}</p>
+                        {/* <div className={styles.starsOuter}>
                             <Star rating={product.rating.rate} />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </Link>

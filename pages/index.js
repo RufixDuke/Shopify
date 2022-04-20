@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import HomePage from '../components/HomePage/HomePage'
+import Services from '../components/Services/Services'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -10,8 +11,8 @@ import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 import Phone from '../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
 
 export default function Home({ products }) {
-  
-  let sliced = products.slice(1, 11)
+
+  let sliced = products.slice(1, 9)
 
   return (
     <div className={styles.container}>
@@ -60,7 +61,10 @@ export default function Home({ products }) {
               <HomePage key={product.id} product={product} />
             ))}
           </div>
+        </div>
 
+        <div className={styles.containers}>
+          <Services />
         </div>
       </main>
     </div>

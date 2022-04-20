@@ -29,7 +29,7 @@ export default function Home({ products }) {
             <h2>Discover <span className={styles.yellow}>The Best</span> Accessories For <span className={styles.bolden}>Your Interior</span></h2>
             <p>we sell accessories that perfectly gap between beauty and functionality</p>
 
-            <Link href='/electronics'>
+            <Link href='/electronics' passHref>
               <button className={styles.btn}>
                 Shop Now
                 <FontAwesomeIcon
@@ -42,7 +42,7 @@ export default function Home({ products }) {
           </div>
 
           <div>
-            <Image src={Phone} width='100%' height={100} />
+            <Image src={Phone} alt="Just Phone" width='100%' height={100} />
             <Link href='/contact'>
               <a className={styles.contact}>Read More</a>
             </Link>

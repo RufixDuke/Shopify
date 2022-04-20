@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './HomePage.module.css'
-import Star from './Star/Star'
 
 function HomePage({ product }) {
     let a = product.price
@@ -13,7 +12,7 @@ function HomePage({ product }) {
         <>
             <Link href={`/${product.category}/${product.id}`} passHref>
                 <div className={styles.card}>
-                    <img className={styles.img} src={product.image} alt={product.title} width='100%' />
+                    <Image className={styles.img} src={product.image} alt={product.title} width='100%' height= '150px' />
                     <div className={styles.container}>
                         <p>{product.title.length > 20 ? `${product.title.slice(0, 20)}...` : product.title}</p>
                         <div className={styles.price}>

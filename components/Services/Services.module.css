@@ -1,3 +1,7 @@
 .flexs {
     display: flex;
 }
+
+.One {
+    width: 100%
+}

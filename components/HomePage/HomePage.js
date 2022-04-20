@@ -5,7 +5,6 @@ import styles from './HomePage.module.css'
 import Star from './Star/Star'
 
 function HomePage({ product }) {
-    // let rating = [product.rating]
     let a = product.price
     let b = Number(a)
     let c = b * 0.15
@@ -21,10 +20,7 @@ function HomePage({ product }) {
                             <p className={styles.gray}>${product.price}</p>
                             <p className={styles.green}>${c.toFixed(2)}</p>
                         </div>
-                        <p>{product.description.length > 20 ? `${product.description.slice(0, 20)}...` : product.description}</p>
-                        {/* <div className={styles.starsOuter}>
-                            <Star rating={product.rating.rate} />
-                        </div> */}
+                        {/* <p>{product.description.length > 20 ? `${product.description.slice(0, 20)}...` : product.description}</p> */}
                     </div>
                 </div>
             </Link>

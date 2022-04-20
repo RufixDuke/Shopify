@@ -33,7 +33,7 @@
 }
 
 .gray {
-    color: rgb(221, 221, 221);
+    color: rgb(209, 209, 209);
     margin-right: 15px;
 }
 
@@ -47,11 +47,10 @@
     font-family: FontAwesome;
 }
 
- 
 /* .starsOuter::before {
-  content: "\f006 \f006 \f006 \f006 \f006";
+    content: "\f006 \f006 \f006 \f006 \f006";
 }
- 
+
 .starsOuter::before {
-  content: "\f006 \f006 \f006 \f006 \f006";
+    content: "\f006 \f006 \f006 \f006 \f006";
 } */

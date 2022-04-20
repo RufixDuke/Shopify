@@ -1,13 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
+import {useRef} from 'react'
 import classes from './Star.module.css'
 
 
 function Star({rating}) {
     const starTotal = 5;
 
-    // for (let rat = 0; rat < rating.length; rat++) {
+    for (let rat = 0; rat < rating.length; rat++) {
         
         const starPercentage = (rating / starTotal) * 100;
         
@@ -15,8 +16,8 @@ function Star({rating}) {
         
         document.querySelector(`.${rating} .star`).style.width = starPercentageRounded;
         
-    // }
-    console.log(rating)
+    }
+    console.log(typeof rating)
 
     return (
         <>

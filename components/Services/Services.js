@@ -1,52 +1,63 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar, faRetweet, faMicrophone, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import Image from 'next/link'
+import Image from 'next/image'
+import Link from 'next/link'
+import Service from '../../public/pexels-christina-morillo-1181622.jpg'
 
 import classes from './Services.module.css'
 
 function Services() {
     return (
         <>
-            <p>Our Services & Benefts</p>
+            <h2 className={classes.header}>Our Services & Benefits</h2>
             <div className={classes.flexs}>
                 <div className={classes.blocks}>
                     <div className={classes.One}>
-                        <FontAwesomeIcon icon={faCar} style={{ fontSize: 1 }} />
-                        <p>Fast & Free Shipping</p>
-                        <p>Sign up to premier delivery in Nigeria for unlimited free shipping from USAsssss</p>
+                        {/* <FontAwesomeIcon icon={faCar} style={{ fontSize: 1 }} /> */}
+                        Icon
+                        <p className={classes.bolden}>Fast & Free <br /> Shipping</p>
+                        <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
 
-                    <div className={classes.One}>
+                    <div className={classes.Two}>
                         <div>
-                            <FontAwesomeIcon icon={faRetweet} style={{ fontSize: 10, color: 'red' }} />
-
+                            {/* <FontAwesomeIcon icon={faRetweet} style={{ fontSize: 10, color: 'red' }} /> */}
+                            Icon
                         </div>
-                        <p>Fast & Free Shipping</p>
-                        <p>Sign up to premier delivery in Nigeria for unlimited free shipping from USAsssss</p>
+                        <p className={classes.bolden}>Hassle Free <br /> Returns</p>
+                        <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
                 </div>
 
                 <div className={classes.block}>
                     <div className={classes.One}>
-                        <FontAwesomeIcon
+                        {/* <FontAwesomeIcon
                             icon={faMicrophone}
                         // style={{ fontSize: 1 }}
-                        />
-                        <p>Fast & Free Shipping</p>
-                        <p>Sign up to premier delivery in Nigeria for unlimited free shipping from USAsssss</p>
+                        /> */}
+                        Icon
+                        <p className={classes.bolden}>24/7 Support</p>
+                        <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
 
-                    <div className={classes.One}>
-                        <FontAwesomeIcon icon={faCheckCircle} style={{ fontSize: 1 }} />
-                        <p>Fast & Free Shipping</p>
-                        <p>Sign up to premier delivery in Nigeria for unlimited free shipping from USAsssss</p>
+                    <div className={classes.Two}>
+                        {/* <FontAwesomeIcon icon={faCheckCircle} style={{ fontSize: 1 }} /> */}
+                        Icon
+                        <p className={classes.bolden}>Your Best Price <br /> Matching</p>
+                        <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
                 </div>
 
                 <div>
-                    <Image src={'../../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'} alt="Services" width={100} height={100} />
+                    <Image src={Service} className={classes.img} alt="Services" width='430px' height='400px' />
                 </div>
             </div>
+
+            <Link href='/contact'>
+                <button className={classes.btn}>
+                    Know More
+                </button>
+            </Link>
         </>
     )
 }

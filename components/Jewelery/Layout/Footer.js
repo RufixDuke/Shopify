@@ -15,19 +15,19 @@ function Footer() {
                         <h3>Logo</h3>
                         <p>Sophisticated simplicity is for the <br /> independent mind</p>
                         <div>
-                            <a  href="https://www.instagram.com">
+                            <a href="https://www.instagram.com">
                                 <Image src={Insta} width={20} height={20} />
                             </a>
 
-                            <a  href="https://www.facebbook.com">
+                            <a href="https://www.facebbook.com">
                                 <Image src={Fb} width={20} height={20} />
                             </a>
 
-                            <a  href="https://www.linkedin.com">
+                            <a href="https://www.linkedin.com">
                                 <Image src={LinkedIn} width={20} height={20} />
                             </a>
 
-                            <a  href="https://www.behance.net">
+                            <a href="https://www.behance.net">
                                 <Image src={Behance} width={20} height={20} />
                             </a>
                         </div>
@@ -35,32 +35,38 @@ function Footer() {
 
                     <div className={classes.Second}>
                         <p>Help & Information</p>
-                        <hr width= '30px' />
-                        <p>Pagination</p>
-                        <p>Terms & Condition</p>
-                        <p>Contact</p>
-                        <p>Home Page</p>
-                        <p>Terms of Use</p>
+                        <hr width='30px' />
+                        <div className={classes.note}>
+                            <p>Pagination</p>
+                            <p>Terms & Condition</p>
+                            <p>Contact</p>
+                            <p>Home Page</p>
+                            <p>Terms of Use</p>
+                        </div>
                     </div>
 
                     <div className={classes.Third}>
                         <p>Categories</p>
                         <hr width='30px' />
-                        <p>Pagination</p>
-                        <p>Terms & Condition</p>
-                        <p>Contact</p>
-                        <p>Home Page</p>
-                        <p>Terms of Use</p>
+                        <div className={classes.note}>
+                            <p>Pagination</p>
+                            <p>Terms & Condition</p>
+                            <p>Contact</p>
+                            <p>Home Page</p>
+                            <p>Terms of Use</p>
+                        </div>
                     </div>
 
                     <div className={classes.Third}>
                         <p>Categories</p>
                         <hr width='30px' />
-                        <p>Pagination</p>
-                        <p>Terms & Condition</p>
-                        <p>Contact</p>
-                        <p>Home Page</p>
-                        <p>Terms of Use</p>
+                        <div className={classes.note}>
+                            <p>Pagination</p>
+                            <p>Terms & Condition</p>
+                            <p>Contact</p>
+                            <p>Home Page</p>
+                            <p>Terms of Use</p>
+                        </div>
                     </div>
                 </div>
 

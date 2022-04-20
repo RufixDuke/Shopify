@@ -12,7 +12,7 @@ function Jewelery({ jeweleries }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <h2>Welcome to the Jewelery Section</h2>
+            <h2 className={styles.head}>Welcome to the Jewelery Section</h2>
             <div className={styles.cards}>
                 {jeweleries.map((jewelery) => (
                     <OneJewelery key={jewelery.id} jewelery={jewelery} />

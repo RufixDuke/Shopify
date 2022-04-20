@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 .cards {
     width: 100%;
     display: grid;
@@ -7,10 +9,12 @@
     grid-template-columns: auto auto auto;
     grid-column-start: 1;
     grid-column-end: 3;
+    font-family: 'Ubuntu', 'san-serif';
+    padding: 60px;
 }
 
 .head {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', 'san-serif';
     text-align: center;
     font-size: 3em;
 }

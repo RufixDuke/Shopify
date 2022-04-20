@@ -6,7 +6,7 @@ import styles from './HomePage.module.css'
 function HomePage({ product }) {
     let a = product.price
     let b = Number(a)
-    let c = b * 0.15
+    let c = b * 0.85
 
     return (
         <>

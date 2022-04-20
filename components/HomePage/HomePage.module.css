@@ -40,17 +40,3 @@
 .green {
     color: rgb(71, 219, 71);
 }
-
-.starsOuter {
-    display: inline-block;
-    position: relative;
-    font-family: FontAwesome;
-}
-
-/* .starsOuter::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
-}
-
-.starsOuter::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
-} */

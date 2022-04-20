@@ -42,7 +42,7 @@ export default function Home({ products }) {
           </div>
 
           <div>
-            <Image src={Phone} alt="Just Phone" width='100%' height={100} />
+            <Image className={styles.image} src={Phone} alt="Just Phone" width='100%' height='200px' />
             <Link href='/contact'>
               <a className={styles.contact}>Read More</a>
             </Link>

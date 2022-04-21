@@ -26,8 +26,8 @@ export default function Home({ products }) {
       <main className={styles.main}>
         <div className={styles.hero}>
           <div>
-            <h2>Discover <span className={styles.yellow}>The Best</span> Accessories For <span className={styles.bolden}>Your Interior</span></h2>
-            <p>we sell accessories that perfectly gap between beauty and functionality</p>
+            <h2 className={styles.texts}>Discover <span className={styles.yellow}>The Best</span> Accessories For <span className={styles.bolden}>Your Interior</span></h2>
+            <p className={styles.small}>we sell accessories that perfectly gap between beauty and functionality</p>
 
             <Link href='/electronics' passHref>
               <button className={styles.btn}>
@@ -50,12 +50,12 @@ export default function Home({ products }) {
         </div>
 
         <div className={styles.display}>
-          <h3 className={styles.bolden}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Doloremque corrupti explicabo quas quisquam cupiditate quaerat necessitatibus eius voluptates
             provident voluptatum.</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
+          <p className={styles.texts}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
 
-          <h2>Our Products at a Glance</h2>
+          <h2 className={styles.texts}>Our Products at a Glance</h2>
           <div className={styles.cards}>
             {sliced.map((product) => (
               <HomePage key={product.id} product={product} />

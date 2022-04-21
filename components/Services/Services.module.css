@@ -15,7 +15,7 @@
 }
 
 .Two {
-    margin-top: 6em;
+    margin-top: 3.5em;
 }
 
 .img {
@@ -24,12 +24,12 @@
 
 .bolden {
     font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .small {
     font-size: 11px;
-    color: rgb(199, 199, 199);
-    font-weight: lighter;
+    color: rgb(122, 122, 122);
     font-family: 'Ubuntu', sans-serif;
 }
 

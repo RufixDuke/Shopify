@@ -15,7 +15,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        image: "/public/3536452.jpg"
+        image: "https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
         id: 3,

@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import classes from './Feedback.module.css'
 
-import Phone from '../../../public/pexels-pixabay-459654.jpg'
-
 
 function Feedback({ feedback }) {
     return (
@@ -15,17 +13,19 @@ function Feedback({ feedback }) {
                     <h3 className={classes.name}>{feedback.name}</h3>
                     <p>{feedback.job}</p>
                 </div>
+                
                 <div>
                     <Image
-                    className={classes.img} 
-                    src={Phone} 
-                    alt="Phone" 
-                    width='600px' 
-                    height='500px' />
+                        className={classes.img}
+                        src={feedback.image}
+                        alt="Phone"
+                        width='700px'
+                        height='580px'
+                    />
                 </div>
             </div>
 
-
+            
         </>
     )
 }

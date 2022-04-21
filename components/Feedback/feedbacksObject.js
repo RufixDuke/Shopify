@@ -1,3 +1,5 @@
+import Phone from '../../public/pexels-pixabay-459654.jpg'
+
 export const FeedbackObject = [
     {
         id: 1,
@@ -5,7 +7,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: "/public/3536452.jpg"
+        image: {Phone}
     },
     {
         id: 2,
@@ -13,7 +15,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: "/public/3536452.jpg"
+        image: "/public/3536452.jpg"
     },
     {
         id: 3,
@@ -21,7 +23,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: "/public/3536452.jpg"
+        image: "/public/3536452.jpg"
     },
     {
         id: 4,
@@ -29,7 +31,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: "/public/3536452.jpg"
+        image: "/public/3536452.jpg"
     },
     {
         id: 5,
@@ -37,7 +39,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: "/public/3536452.jpg"
+        image: "/public/3536452.jpg"
     },
     {
         id: 6,
@@ -45,7 +47,7 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: "/public/3536452.jpg"
+        image: "/public/3536452.jpg"
     },
     {
         id: 7,
@@ -53,6 +55,6 @@ export const FeedbackObject = [
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit perferendis esse tenetur labore, pariatur consequatur eaque unde perspiciatis quis molestiae.",
         star: 5,
         job: "Digital Marketer",
-        // image: '/public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
+        image: '/public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
     },
 ]

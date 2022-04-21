@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import HomePage from '../components/HomePage/HomePage'
 import Services from '../components/Services/Services'
+import Feedbacks from '../components/Feedback/Feedbacks'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -65,6 +66,10 @@ export default function Home({ products }) {
 
         <div className={styles.containers}>
           <Services />
+        </div>
+
+        <div>
+          <Feedbacks />
         </div>
       </main>
     </div>

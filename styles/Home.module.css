@@ -35,6 +35,7 @@
   align-items: center;
   line-height: 40px;
   padding: 60px 60px 0 60px;
+  font-family: 'Ubuntu', 'san-serif';
 }
 
 .image {
@@ -97,10 +98,10 @@
     grid-column-end: 3;
 }
 
-.mmm {
-  /* position: absolute; */
-  /* z-index: 100; */
-}
+/* .mmm {
+  position: absolute;
+  z-index: 100;
+} */
 
 .display {
   text-align: center;
@@ -115,7 +116,7 @@
 }
 
 .swiper {
-  width: 10%;
+  width: 100%;
   height: 100%;
   /* position/: absolute; */
 }

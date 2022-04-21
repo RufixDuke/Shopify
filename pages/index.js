@@ -24,13 +24,9 @@ export default function Home({ products }) {
 
 
       <main className={styles.main}>
-        <div className={styles.hero}>
+        
           <Hero />
 
-          <div>
-            
-          </div>
-        </div>
 
         <div className={styles.display}>
           <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -5,8 +5,9 @@
   justify-content: space-between;
   margin: 0;
   padding: 20px;
-  background-color: rgb(245, 241, 241);
-  color: rgb(116, 113, 113);
+  background-color: white;
+  color: black;
+  font-size: 14px;
 }
 
 /* .nav {

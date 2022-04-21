@@ -8,10 +8,8 @@ function MainNav() {
         <>
             <header className={classes.header}>
                 <div>
-                {/* Logo */}
-                    <Image src={Logo} className={classes.img} alt="Logo" width="47%" height="47vh"/>
+                    <Image src={Logo} className={classes.img} alt="Logo" width="47%" height="47vh" />
                 </div>
-
 
                 <div>
                     <nav className={classes.links}>

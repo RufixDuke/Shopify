@@ -19,8 +19,8 @@ function Feedback({ feedback }) {
                         className={classes.img}
                         src={feedback.image}
                         alt="Phone"
-                        width='700px'
-                        height='580px'
+                        width='400px'
+                        height='300px'
                     />
                 </div>
             </div>

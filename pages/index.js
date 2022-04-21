@@ -7,9 +7,6 @@ import Feedbacks from '../components/Feedback/Feedbacks'
 // import Picture from '../components/Hero/Picture/Picture'
 import Hero from '../components/Hero/Hero'
 
-
-
-
 export default function Home({ products }) {
 
   let sliced = products.slice(1, 9)

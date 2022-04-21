@@ -4,6 +4,7 @@
     display: flex;
     /* line-height: 10px; */
     font-family: 'Ubuntu', 'san-serif';
+    /* height: auto; */
 }
 
 .header {
@@ -22,6 +23,7 @@
 
 .img {
     border-radius: 5px;
+    /* height: auto; */
 }
 
 .bolden {

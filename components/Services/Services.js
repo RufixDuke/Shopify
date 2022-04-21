@@ -49,7 +49,7 @@ function Services() {
                 </div>
 
                 <div>
-                    <Image src={Service} className={classes.img} alt="Services" width='480px' height='400px' />
+                    <Image src={Service} className={classes.img} alt="Services" width='380px' height='280px' />
                 </div>
             </div>
 

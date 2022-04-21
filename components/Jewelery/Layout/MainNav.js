@@ -8,7 +8,7 @@ function MainNav() {
         <>
             <header className={classes.header}>
                 <div>
-                    <Image src={Logo} className={classes.img} alt="Logo" width="47%" height="47vh" />
+                    <Image src={Logo} className={classes.img} alt="Logo" width="47%" height="45px" />
                 </div>
 
                 <div>

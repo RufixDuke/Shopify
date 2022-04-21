@@ -14,7 +14,7 @@ function HomePage({ product }) {
                 <div className={styles.card}>
                     <Image className={styles.img} src={product.image} alt={product.title} width='100%' height= '150px' />
                     <div className={styles.container}>
-                        <p>{product.title.length > 20 ? `${product.title.slice(0, 20)}...` : product.title}</p>
+                        <p>{product.title.length > 20 ? `${product.title.slice(0, 17)}...` : product.title}</p>
                         <div className={styles.price}>
                             <p className={styles.gray}>${product.price}</p>
                             <p className={styles.green}>${c.toFixed(2)}</p>

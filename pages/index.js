@@ -1,23 +1,13 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import HomePage from '../components/HomePage/HomePage'
 import Services from '../components/Services/Services'
 import Feedbacks from '../components/Feedback/Feedbacks'
-import { Pictures } from '../components/Picture/pageObject'
-import Picture from '../components/Picture/Picture'
+// import { Pictures } from '../components/Hero/Picture/PictureObject'
+// import Picture from '../components/Hero/Picture/Picture'
+import Hero from '../components/Hero/Hero'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 
 
 export default function Home({ products }) {
@@ -35,44 +25,10 @@ export default function Home({ products }) {
 
       <main className={styles.main}>
         <div className={styles.hero}>
-          <div>
-            <h2 className={styles.texts}>Discover <span className={styles.yellow}>The Best</span> Accessories For <span className={styles.bolden}>Your Interior</span></h2>
-            <p className={styles.small}>we sell accessories that perfectly gap between beauty and functionality</p>
-
-            <Link href='/electronics' passHref>
-              <button className={styles.btn}>
-                Shop Now
-                <FontAwesomeIcon
-                  icon={faArrowAltCircleRight}
-                  style={{ fontSize: 50, marginLeft: 10, color: 'yellow' }}
-                />
-              </button>
-            </Link>
-
-          </div>
+          <Hero />
 
           <div>
-            <Swiper
-              spaceBetween={30}
-              effect={"fade"}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false
-              }}
-              navigation={true}
-              pagination={{
-                clickable: true
-              }}
-              modules={[Autoplay, EffectFade, Navigation, Pagination]}
-              className={styles.mySwiper}
-            >
-
-              {Pictures.map((picture) =>
-                <SwiperSlide key={picture.id}>
-                  <Picture picture={picture} />
-                </SwiperSlide>
-              )}
-            </Swiper>
+            
           </div>
         </div>
 

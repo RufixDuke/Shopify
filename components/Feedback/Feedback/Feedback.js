@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import classes from './Feedback.module.css'
+
+import Phone from '../../../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
 
 
 function Feedback({ feedback }) {
@@ -13,7 +16,7 @@ function Feedback({ feedback }) {
                     <p>{feedback.job}</p>
                 </div>
                 <div>
-                    <Image src={feedback.image} alt={feedback.name} width='300px' height='100px' />
+                    <Image src={Phone} alt="Phone" width='100px' height='100%' />
                 </div>
             </div>
 

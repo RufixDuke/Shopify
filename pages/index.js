@@ -24,9 +24,8 @@ export default function Home({ products }) {
 
 
       <main className={styles.main}>
-        
-          <Hero />
 
+          <Hero />
 
         <div className={styles.display}>
           <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -49,8 +48,8 @@ export default function Home({ products }) {
         <div>
           <Feedbacks />
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }
 

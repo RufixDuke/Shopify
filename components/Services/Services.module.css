@@ -3,6 +3,7 @@
 .flexs {
     display: flex;
     /* line-height: 10px; */
+    font-family: 'Ubuntu', 'san-serif';
 }
 
 .header {

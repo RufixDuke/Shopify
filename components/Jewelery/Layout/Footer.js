@@ -16,19 +16,19 @@ function Footer() {
                         <p>Sophisticated simplicity is for the <br /> independent mind</p>
                         <div>
                             <a href="https://www.instagram.com">
-                                <Image src={Insta} width={20} height={20} />
+                                <Image src={Insta} alt="Instagram" width={20} height={20} />
                             </a>
 
                             <a href="https://www.facebbook.com">
-                                <Image src={Fb} width={20} height={20} />
+                                <Image src={Fb} alt="Facebook" width={20} height={20} />
                             </a>
 
                             <a href="https://www.linkedin.com">
-                                <Image src={LinkedIn} width={20} height={20} />
+                                <Image src={LinkedIn} alt="LinkedIn" width={20} height={20} />
                             </a>
 
                             <a href="https://www.behance.net">
-                                <Image src={Behance} width={20} height={20} />
+                                <Image src={Behance} alt="Behance" width={20} height={20} />
                             </a>
                         </div>
                     </div>

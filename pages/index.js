@@ -1,15 +1,24 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import HomePage from '../components/HomePage/HomePage'
 import Services from '../components/Services/Services'
 import Feedbacks from '../components/Feedback/Feedbacks'
+import { Pictures } from '../components/Picture/pageObject'
+import Picture from '../components/Picture/Picture'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
-import Phone from '../public/rishabh-malhotra-83ypHTv6J2M-unsplash.jpg'
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
+
 
 export default function Home({ products }) {
 
@@ -43,10 +52,27 @@ export default function Home({ products }) {
           </div>
 
           <div>
-            <Image className={styles.image} src={Phone} alt="Just Phone" width='100%' height='200px' />
-            <Link href='/contact'>
-              <a className={styles.contact}>Read More</a>
-            </Link>
+            <Swiper
+              spaceBetween={30}
+              effect={"fade"}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false
+              }}
+              navigation={true}
+              pagination={{
+                clickable: true
+              }}
+              modules={[Autoplay, EffectFade, Navigation, Pagination]}
+              className={styles.mySwiper}
+            >
+
+              {Pictures.map((picture) =>
+                <SwiperSlide key={picture.id}>
+                  <Picture picture={picture} />
+                </SwiperSlide>
+              )}
+            </Swiper>
           </div>
         </div>
 
@@ -71,8 +97,8 @@ export default function Home({ products }) {
         <div>
           <Feedbacks />
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }
 

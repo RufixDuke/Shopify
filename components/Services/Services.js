@@ -15,7 +15,7 @@ function Services() {
                     <div className={classes.One}>
                         {/* <FontAwesomeIcon icon={faCar} style={{ fontSize: 1 }} /> */}
                         Icon
-                        <p className={classes.bolden}>Fast & Free <br /> Shipping</p>
+                        <p className={classes.bolden}>Fast & Free  Shipping</p>
                         <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
 
@@ -24,7 +24,7 @@ function Services() {
                             {/* <FontAwesomeIcon icon={faRetweet} style={{ fontSize: 10, color: 'red' }} /> */}
                             Icon
                         </div>
-                        <p className={classes.bolden}>Hassle Free <br /> Returns</p>
+                        <p className={classes.bolden}>Hassle Free  Returns</p>
                         <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
                 </div>
@@ -43,17 +43,17 @@ function Services() {
                     <div className={classes.Two}>
                         {/* <FontAwesomeIcon icon={faCheckCircle} style={{ fontSize: 1 }} /> */}
                         Icon
-                        <p className={classes.bolden}>Your Best Price <br /> Matching</p>
+                        <p className={classes.bolden}>Best Price Matching</p>
                         <p className={classes.small}>Sign up to premier delivery in Nigeria for unlimited free shipping from USA</p>
                     </div>
                 </div>
 
                 <div>
-                    <Image src={Service} className={classes.img} alt="Services" width='430px' height='400px' />
+                    <Image src={Service} className={classes.img} alt="Services" width='480px' height='400px' />
                 </div>
             </div>
 
-            <Link href='/contact'>
+            <Link href='/contact' passHref>
                 <button className={classes.btn}>
                     Know More
                 </button>

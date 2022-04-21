@@ -2,6 +2,7 @@
 
 .flexs {
     display: flex;
+    /* line-height: 10px; */
 }
 
 .header {
@@ -15,7 +16,7 @@
 }
 
 .Two {
-    margin-top: 3.5em;
+    margin-top: 2em;
 }
 
 .img {
@@ -24,13 +25,14 @@
 
 .bolden {
     font-weight: bold;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 .small {
     font-size: 11px;
-    color: rgb(122, 122, 122);
+    color: rgb(151, 151, 151);
+    font-weight: lighter;
     font-family: 'Ubuntu', sans-serif;
+    line-height: 15px;
 }
 
 .btn {
@@ -39,6 +41,7 @@
     border: 0;
     background-color: black;
     color: white;
+    margin: 12px 0 18px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: transform 0.3s ease-in-out;
 }

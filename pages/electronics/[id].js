@@ -4,7 +4,7 @@ function OneElectronic({ electronic }) {
     return (
         <>
             <div>Hiiiiiiiii</div>
-                        <div key={electronic.id}>
+            <div key={electronic.id}>
                 <Image src={electronic.image} width={75} height={67} alt="image" />
                 <h3>{electronic.title}</h3>
             </div>
@@ -28,10 +28,10 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({params: {id}}) {
+export async function getStaticProps({ params: { id } }) {
     const data = await fetch(`https://fakestoreapi.com/products/category/electronics`)
         .then(res => res.json())
-        .then(res => res.filter(item=> (item.id==id))[0])
+        .then(res => res.filter(item => (item.id == id))[0])
 
     return {
         props: {

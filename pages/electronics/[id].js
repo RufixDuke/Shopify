@@ -11,19 +11,23 @@ function OneElectronic({ electronic }) {
             <div>
                 <MainNav />
                 <div className={styles.checkout}>
-                    <div><Image src={electronic.image} width={75} height={67} alt="image" /></div>
-                    <div key={electronic.id}>
-                        <h3>{electronic.title}</h3>
-                        <p>Category: {electronic.category}</p>
-                        <div>
-                            <p>${b}</p>
-                            <p>${electronic.price}</p>
+                    <div className={styles.card}>
+                        <div><Image src={electronic.image} width={75} height={67} alt="image" /></div>
+                        <div key={electronic.id}>
+                            <h3>{electronic.title}</h3>
+                            <p>Category: {electronic.category}</p>
+                            <div>
+                                <p>${b}</p>
+                                <p>${electronic.price}</p>
+                            </div>
+                            <Link href='/cart' passHref>
+                                <button className={styles.cart}>Add To Cart</button>
+                            </Link>
                         </div>
-                        <Link href='/cart' passHref>
-                            <button className={styles.cart}>Add To Cart</button>
-                        </Link>
                     </div>
+
                 </div>
+
             </div>
 
         </>

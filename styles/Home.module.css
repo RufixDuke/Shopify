@@ -160,6 +160,7 @@ transform: scale(0.97);
 
 .checkout {
   display: flex;
+  padding: 40px 60px;
 }
 
 .cart {
@@ -173,4 +174,9 @@ transform: scale(0.97);
 .cart:hover {
   transform: scale(0.99);
   background-color: rgb(104, 175, 199);
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
 }

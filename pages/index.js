@@ -6,6 +6,7 @@ import Feedbacks from '../components/Feedback/Feedbacks'
 // import { Pictures } from '../components/Hero/Picture/PictureObject'
 // import Picture from '../components/Hero/Picture/Picture'
 import Hero from '../components/Hero/Hero'
+import Sponsors from '../components/Sponsors/Sponsors'
 
 export default function Home({ products }) {
 
@@ -44,6 +45,10 @@ export default function Home({ products }) {
 
         <div>
           <Feedbacks />
+        </div>
+
+        <div>
+          <Sponsors />
         </div>
       </main>
     </div>

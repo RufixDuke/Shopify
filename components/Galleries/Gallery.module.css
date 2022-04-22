@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+
+.pic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head {
+    background-color:rgb(241, 241, 241);
+    padding: 20px 60px 40px 60px;
+}
+
+.header {
+    text-align: center;
+    font-family: 'Ubuntu', 'san-serif';
+}
+
+.img {
+    border-radius: 6px;
+    transition: transform 0.2s;
+}
+
+.img:hover {
+    transform: scale(0.97);
+    opacity: 0.9;
+}

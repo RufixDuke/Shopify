@@ -1,14 +1,12 @@
-import Image from 'next/link'
+import Image from 'next/image'
 
 import classes from './Gallery.module.css'
 
-function Galleries({Picture}) {
-    return(
+function Galleries({ Picture }) {
+    return (
         <>
-            <div className={classes.pic}>
-                <div>
-                    <Image src={Picture.image} alt="Just Picture" width={100} height={100} />
-                </div>
+            <div>
+                <Image className={classes.img} src={Picture.image} alt="Just Picture" width={150} height={150} />
             </div>
         </>
     )

@@ -20,7 +20,7 @@ function OneElectronic({ electronic }) {
                             <p>${electronic.price}</p>
                         </div>
                         <Link href='/cart' passHref>
-                            <button className={classes.cart}>Add To Cart</button>
+                            <button className={styles.cart}>Add To Cart</button>
                         </Link>
                     </div>
                 </div>

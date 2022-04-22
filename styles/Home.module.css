@@ -167,9 +167,10 @@ transform: scale(0.97);
   border-radius: 5px;
   border: 0;
   background-color: lightblue;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .cart:hover {
-  transform: scale(0.97);
+  transform: scale(0.99);
+  background-color: rgb(104, 175, 199);
 }

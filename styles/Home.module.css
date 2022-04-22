@@ -161,3 +161,15 @@ transform: scale(0.97);
 .checkout {
   display: flex;
 }
+
+.cart {
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: 0;
+  background-color: lightblue;
+  transition: transform 0.3s ease;
+}
+
+.cart:hover {
+  transform: scale(0.97);
+}

@@ -1,13 +1,20 @@
 import Image from 'next/image'
+import MainNav from '../../components/Jewelery/Layout/MainNav'
+import styles from '../../styles/Home.module.css'
 
 function OneElectronic({ electronic }) {
     return (
         <>
-            <div>Hiiiiiiiii</div>
-            <div key={electronic.id}>
-                <Image src={electronic.image} width={75} height={67} alt="image" />
-                <h3>{electronic.title}</h3>
+            <div>
+                <MainNav />
+                <div className={styles.checkout}>
+                    <div><Image src={electronic.image} width={75} height={67} alt="image" /></div>
+                    <div key={electronic.id}>
+                        <h3>{electronic.title}</h3>
+                    </div>
+                </div>
             </div>
+
         </>
     )
 }

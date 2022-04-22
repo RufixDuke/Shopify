@@ -7,9 +7,11 @@ function SingleProduct() {
                 <MainNav />
 
                 <div>
-                    
+
                 </div>
             </div>
         </>
     )
 }
+
+export default SingleProduct;

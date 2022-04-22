@@ -157,3 +157,7 @@
 .btns:hover {
 transform: scale(0.97);
 }
+
+.checkout {
+  display: flex;
+}

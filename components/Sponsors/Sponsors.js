@@ -17,7 +17,14 @@ function Sponsors() {
             <div className={classes.Sponsors}>
                 <h2>Our Partners & Sponsors</h2>
                 <div>
-                    <Image src={Google} alt="Google" width={170} height={100} />
+                    <Image src={Google} alt="Google" width={120} height={40} />
+                    <Image src={Coursera} alt="Google" width={150} height={40} />
+                    <Image src={Airbnb} alt="Google" width={150} height={40} />
+                    <Image src={Microsoft} alt="Google" width={140} height={100} />
+                    <Image src={Duolingo} alt="Google" width={150} height={40} />
+                    <Image src={Udemy} alt="Google" width={150} height={65} />
+                    <Image src={PluralSight} alt="Google" width={200} height={90} />
+                    <Image src={Airtable} alt="Google" width={200} height={100} />
                 </div>
             </div>
         </>

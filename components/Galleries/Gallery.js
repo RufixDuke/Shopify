@@ -4,9 +4,11 @@ import Galleries from './Galleries'
 function Gallery() {
     return (
         <>
-            {PictureObject.map((Picture) => 
-                <Galleries key={Picture.id} Picture={Picture} />
-            )}
+            <div>
+                {PictureObject.map((Picture) =>
+                    <Galleries key={Picture.id} Picture={Picture} />
+                )}
+            </div>
         </>
     )
 }

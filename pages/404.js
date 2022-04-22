@@ -17,7 +17,7 @@ function PageNotFound() {
                     <p>Sorry, the page you are looking fro does not exist or has been moved.
                         Try searching out site, or go back.</p>
 
-                    <Link href='/'>
+                    <Link href='/' passHref>
                         <button className={styles.btns}>Take me Home</button>
                     </Link>
                 </div>

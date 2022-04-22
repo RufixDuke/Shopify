@@ -16,17 +16,6 @@ function Gallery() {
         <>
             <div className={classes.head}>
                 <h2 className={classes.header}>Visit Our Gallery</h2>
-                {/* <div>
-                    <div className={classes.pic}>
-                        {PictureObject.map((Picture) =>
-                            <Galleries key={Picture.id} Picture={Picture} />
-                        )}
-                    </div>
-
-                </div> */}
-
-
-
                 <div className={classes.pic}>
                     <Swiper
                         slidesPerView={5}

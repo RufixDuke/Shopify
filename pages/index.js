@@ -7,6 +7,7 @@ import Feedbacks from '../components/Feedback/Feedbacks'
 // import Picture from '../components/Hero/Picture/Picture'
 import Hero from '../components/Hero/Hero'
 import Sponsors from '../components/Sponsors/Sponsors'
+import Gallery from '../components/Galleries/Gallery'
 
 export default function Home({ products }) {
 
@@ -49,6 +50,10 @@ export default function Home({ products }) {
 
         <div>
           <Sponsors />
+        </div>
+
+        <div>
+          <Gallery />
         </div>
       </main>
     </div>

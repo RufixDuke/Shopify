@@ -5,6 +5,8 @@ import Button from '../../components/Button/Button';
 import { updateObject } from '../../components/utility';
 import classes from '../../styles/Auth.module.css'
 
+import Link from 'next/link'
+
 function Authentication() {
     const initialState = {
         token: null,
@@ -209,6 +211,10 @@ function Authentication() {
                     clicked={switchAuthModeHandler}
                     btnType="Danger">SWITCH TO {isSignup ? 'SIGN UP' : 'SIGN IN'}
                 </Button>
+
+                {/* <div>
+                    <Link href='/'>Home</Link>
+                </div> */}
             </div>
         </>
     )

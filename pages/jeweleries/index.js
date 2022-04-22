@@ -1,6 +1,8 @@
 import styles from '../../styles/display.module.css';
 import Head from 'next/head'
 import OneJewelery from '../../components/Jewelery/Jewelery';
+import Footer from '../../components/Jewelery/Layout/Footer';
+import MainNav from '../../components/Jewelery/Layout/MainNav';
 
 
 function Jewelery({ jeweleries }) {
@@ -12,6 +14,8 @@ function Jewelery({ jeweleries }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
+            <MainNav />
+
             <h2 className={styles.head}>Welcome to the Jewelery Section</h2>
             <div className={styles.cards}>
                 {jeweleries.map((jewelery) => (
@@ -19,6 +23,9 @@ function Jewelery({ jeweleries }) {
                 ))}
             </div>
 
+            <div>
+                <Footer />
+            </div>
         </>
     )
 }

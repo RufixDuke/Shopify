@@ -6,9 +6,9 @@ import Footer from './Footer';
 function Layout(props) {
     return (
         <div>
-            <MainNav />
+            {/* <MainNav /> */}
             <main className={classes.Layout}>{props.children}</main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

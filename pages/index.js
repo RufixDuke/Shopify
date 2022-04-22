@@ -6,6 +6,8 @@ import Feedbacks from '../components/Feedback/Feedbacks'
 import Hero from '../components/Hero/Hero'
 import Sponsors from '../components/Sponsors/Sponsors'
 import Gallery from '../components/Galleries/Gallery'
+import MainNav from '../components/Jewelery/Layout/MainNav'
+import Footer from '../components/Jewelery/Layout/Footer'
 
 export default function Home({ products }) {
 
@@ -19,10 +21,11 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <MainNav />
 
       <main className={styles.main}>
 
-          <Hero />
+        <Hero />
 
         <div className={styles.display}>
           <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -54,6 +57,8 @@ export default function Home({ products }) {
           <Gallery />
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

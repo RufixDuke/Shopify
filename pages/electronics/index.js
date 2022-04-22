@@ -1,6 +1,8 @@
 import styles from '../../styles/display.module.css';
 import Head from 'next/head'
 import Electronic from '../../components/Electronic/Electronic'
+import Footer from '../../components/Jewelery/Layout/Footer';
+import MainNav from '../../components/Jewelery/Layout/MainNav';
 
 
 function DisplayProducts({ electronics }) {
@@ -12,6 +14,8 @@ function DisplayProducts({ electronics }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
+            <MainNav />
+
             <h1 className={styles.head}>These are the available Electronic gadgets</h1>
             <div className={styles.cards}>
                 {electronics.map((electronic) => (
@@ -19,6 +23,9 @@ function DisplayProducts({ electronics }) {
                 ))}
             </div>
 
+            <div>
+                <Footer />
+            </div>
         </>
     )
 }

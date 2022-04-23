@@ -71,14 +71,14 @@ function Authentication() {
 
     const authFail = (initialState, action) => {
         return updateObject(initialState, {
-            error: action.error,
+            error: error,
             loading: false
         });
     };
 
-    const authStart = (initialState, action) => {
-        return updateObject(initialState, { error: null, loading: true });
-    };
+    // const authStart = (initialState, action) => {
+    //     return updateObject(initialState, { error: null, loading: true });
+    // };
 
     const authSuccess = (initialState, action) => {
         return updateObject(initialState, {
@@ -96,9 +96,9 @@ function Authentication() {
                 password,
                 returnSecureToken: true
             };
-            let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
+        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
             if (!isSignup) {
-                url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
+                url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
             }
             axios.post(url, authData)
                 .then(response => {
@@ -110,9 +110,9 @@ function Authentication() {
                     authSuccess(response.data.idToken, response.data.localId);
                     checkAuthTimeout(response.data.expiresIn);
                 })
-                .catch(err => {
-                    authFail(err.response.data.error);
-                });
+                // .catch(err => {
+                //     authFail(err.response.data.error);
+                // });
         }
     
     const checkValidity = (value, rules) => {

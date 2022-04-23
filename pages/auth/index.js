@@ -24,11 +24,11 @@ function Authentication() {
                     type: 'email',
                     placeholder: 'Mail Address'
                 },
-                value: '',
                 validation: {
                     required: true,
                     isEmail: true
                 },
+                value: '',
                 valid: false,
                 touched: false
             },
@@ -38,11 +38,11 @@ function Authentication() {
                     type: 'password',
                     placeholder: 'Password'
                 },
-                value: '',
                 validation: {
                     required: true,
                     minLength: 6
                 },
+                value: '',
                 valid: false,
                 touched: false
             }
@@ -163,7 +163,7 @@ function Authentication() {
                 touched: true
             }
         };
-        setControls({ controls: updatedControls });
+        setControls(() => updatedControls);
     }
 
     let formElementsArray = [];
@@ -174,18 +174,17 @@ function Authentication() {
         });
     }
 
-    let form = formElementsArray.map(formElement => (
-        <Input
-            key={formElement.id}
-            elementType={formElement.config.elementType}
-            elementConfig={formElement.config.elementConfig}
-            value={formElement.config.value}
-            invalid={!formElement.config.valid}
-            shouldValidate={formElement.config.validation}
-            touched={formElement.config.touched}
-            changed={(event) => inputChangedHandler(event, formElement.id)}
-        />
-    ));
+    let form = formElementsArray.map(formElement => <Input
+        key={formElement.id}
+        elementType={formElement.config.elementType}
+        elementConfig={formElement.config.elementConfig}
+        value={formElement.config.value}
+        invalid={!formElement.config.valid}
+        shouldValidate={formElement.config.validation}
+        touched={formElement.config.touched}
+        changed={(event) => inputChangedHandler(event, formElement.id)}
+    />
+    )
 
     const switchAuthModeHandler = () => {
         setIsSignUp(prevState => !prevState);

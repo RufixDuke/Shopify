@@ -96,9 +96,9 @@ function Authentication() {
                 password,
                 returnSecureToken: true
             };
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
             if (!isSignup) {
-                url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
+                url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
             }
             axios.post(url, authData)
                 .then(response => {

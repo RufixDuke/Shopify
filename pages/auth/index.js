@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Button from '../../components/Button/Button';
 import { updateObject } from '../../components/utility';
 import classes from '../../styles/Auth.module.css'
+import axios from 'axios'
 
 import Link from 'next/link'
 
@@ -89,11 +90,10 @@ function Authentication() {
     };
 
     const auth = (email, password, isSignup) => {
-        return (() => {
-            authStart();
+            // authStart();
             const authData = {
-                email: email,
-                password: password,
+                email,
+                password,
                 returnSecureToken: true
             };
             let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
@@ -102,7 +102,7 @@ function Authentication() {
             }
             axios.post(url, authData)
                 .then(response => {
-                    console.log(response);
+                    // return console.log(response);
                     const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
                     localStorage.setItem('token', response.data.idToken);
                     localStorage.setItem('expirationDate', expirationDate);
@@ -114,9 +114,7 @@ function Authentication() {
                     authFail(err.response.data.error);
                 });
         }
-        )
-    };
-
+    
     const checkValidity = (value, rules) => {
         let isValid = true;
         if (!rules) {

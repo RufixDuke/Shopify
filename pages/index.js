@@ -42,21 +42,39 @@ export default function Home() {
     return (
       <>
         <div>
-          <Skeleton />
+          <Skeleton height={350} />
+        </div>
+        <div>
+          <Skeleton height={350} />
+        </div>
+        <div>
+          <Skeleton height={350} />
+        </div>
+        <div>
+          <Skeleton height={350} />
         </div>
       </>
     )
+  }
+
+  const filterProduct = (cat) => {
+    const updatedList = data.filter((x) => x.category === cat)
+    setFilter(updatedList)
   }
 
   const ShowProducts = () => {
     return (
       <>
         <div className={styles.buttons}>
-          <button className={styles.btn2}>All</button>
-          <button className={styles.btn2}>Electronics</button>
-          <button className={styles.btn2}>Jewelery</button>
-          <button className={styles.btn2}>Mens Clothing</button>
-          <button className={styles.btn2}>Women Clothing</button>
+          <button 
+          className={styles.btn2} 
+          onClick={() => setFilter(data)}>All</button>
+          <button 
+          className={styles.btn2}
+          onClick={() => filterProduct("electronics")}>Electronics</button>
+          <button className={styles.btn2} onClick={() => filterProduct("jewelery")}>Jewelery</button>
+          <button className={styles.btn2} onClick={() => filterProduct("men's clothing")}>Mens Clothing</button>
+          <button className={styles.btn2} onClick={() => filterProduct("women's clothing")}>Women Clothing</button>
         </div>
         <div className={styles.cards}>
           {filter.map((product) => {

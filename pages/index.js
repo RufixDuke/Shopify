@@ -9,9 +9,33 @@ import Gallery from '../components/Galleries/Gallery'
 import MainNav from '../components/Jewelery/Layout/MainNav'
 import Footer from '../components/Jewelery/Layout/Footer'
 
-export default function Home({ products }) {
+import { useState, useEffect } from 'react'
 
-  let sliced = products.slice(1, 9)
+export default function Home() {
+  const [data, setData] = useState([])
+  const [filter, setFilter] = useState(data);
+  const [loading, setLoading] = useState(false)
+  let componentMounted = true;
+
+  useEffect(() => {
+    const getProducts = async () => {
+      setLoading(true)
+      const response = await fetch('https://fakestoreapi.com/products');
+
+      if(componentMounted){
+        setData(await response.clone().json());
+        setFilter(await response.json())
+        setLoading(false)
+      }
+
+      return () => {
+        componentMounted = false;
+      }
+    }
+  }, [])
+  
+
+  // let sliced = products.slice(1, 9)
 
   return (
     <div className={styles.container}>
@@ -63,11 +87,11 @@ export default function Home({ products }) {
   )
 }
 
-export async function getStaticProps() {
-  const data = await fetch('https://fakestoreapi.com/products').then(data => data.json())
-  return {
-    props: {
-      products: data,
-    }
-  }
-}
+// export async function getStaticProps() {
+//   const data = await fetch('https://fakestoreapi.com/products').then(data => data.json())
+//   return {
+//     props: {
+//       products: data,
+//     }
+//   }
+// }

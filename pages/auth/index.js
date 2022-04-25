@@ -92,8 +92,8 @@ function Authentication() {
     const auth = (email, password, isSignup) => {
             // authStart();
             const authData = {
-                email,
-                password,
+                email: email,
+                password: password,
                 returnSecureToken: true
             };
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';

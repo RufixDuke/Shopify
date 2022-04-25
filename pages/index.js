@@ -22,7 +22,7 @@ export default function Home() {
       setLoading(true)
       const response = await fetch('https://fakestoreapi.com/products');
 
-      if(componentMounted){
+      if (componentMounted) {
         setData(await response.clone().json());
         setFilter(await response.json())
         setLoading(false)
@@ -32,8 +32,44 @@ export default function Home() {
         componentMounted = false;
       }
     }
+
+    getProducts();
   }, [])
-  
+
+
+  const Loading = () => {
+    return (
+      <>
+        Loading....
+      </>
+    )
+  }
+
+  const ShowProducts = () => {
+    return (
+      <>
+        <div className={styles.buttons}>
+          <button className={styles.btn2}>All</button>
+          <button className={styles.btn2}>Electronics</button>
+          <button className={styles.btn2}>Jewelery</button>
+          <button className={styles.btn2}>Mens Clothing</button>
+          <button className={styles.btn2}>Women Clothing</button>
+        </div>
+        {filter.map((product) => {
+          return(
+            <>
+            <div>
+                {filter.map((product) => (
+                  <HomePage key={product.id} product={product} />
+                ))}
+            </div>
+            </>
+          )
+        })}
+      </>
+    )
+  }
+
 
   // let sliced = products.slice(1, 9)
 
@@ -59,10 +95,13 @@ export default function Home() {
 
           <h2 className={styles.texts}>Our Products at a Glance</h2>
           <div className={styles.cards}>
+            {loading ? <Loading /> : <ShowProducts />}
+          </div>
+          {/* <div className={styles.cards}>
             {sliced.map((product) => (
               <HomePage key={product.id} product={product} />
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.containers}>

@@ -92,9 +92,6 @@ export default function Home() {
     )
   }
 
-
-  // let sliced = products.slice(1, 9)
-
   return (
     <div className={styles.container}>
       <Head>
@@ -106,9 +103,7 @@ export default function Home() {
       <MainNav />
 
       <main className={styles.main}>
-
         <Hero />
-
         <div className={styles.display}>
           <div>
             <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -116,16 +111,8 @@ export default function Home() {
               provident voluptatum.</h3>
             <p className={styles.texts}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
           </div>
-
-
           <h2 className={styles.texts}>Our Products at a Glance</h2>
-
           {loading ? <Loading /> : <ShowProducts />}
-          {/* <div className={styles.cards}>
-            {sliced.map((product) => (
-              <HomePage key={product.id} product={product} />
-            ))}
-          </div> */}
         </div>
 
         <div className={styles.containers}>
@@ -149,12 +136,3 @@ export default function Home() {
     </div>
   )
 }
-
-// export async function getStaticProps() {
-//   const data = await fetch('https://fakestoreapi.com/products').then(data => data.json())
-//   return {
-//     props: {
-//       products: data,
-//     }
-//   }
-// }

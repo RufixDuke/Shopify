@@ -10,6 +10,7 @@ import MainNav from '../components/Jewelery/Layout/MainNav'
 import Footer from '../components/Jewelery/Layout/Footer'
 
 import { useState, useEffect } from 'react'
+import Skeleton from 'react-loading-skeleton'
 
 export default function Home() {
   const [data, setData] = useState([])
@@ -40,7 +41,9 @@ export default function Home() {
   const Loading = () => {
     return (
       <>
-        Loading....
+        <div>
+          <Skeleton />
+        </div>
       </>
     )
   }
@@ -55,17 +58,18 @@ export default function Home() {
           <button className={styles.btn2}>Mens Clothing</button>
           <button className={styles.btn2}>Women Clothing</button>
         </div>
-        {filter.map((product) => {
-          return(
-            <>
-            <div>
-                {filter.map((product) => (
+        <div className={styles.cards}>
+          {filter.map((product) => {
+            return (
+              <>
+                <div>
                   <HomePage key={product.id} product={product} />
-                ))}
-            </div>
-            </>
-          )
-        })}
+                </div>
+              </>
+            )
+          })}
+        </div>
+
       </>
     )
   }
@@ -88,15 +92,17 @@ export default function Home() {
         <Hero />
 
         <div className={styles.display}>
-          <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Doloremque corrupti explicabo quas quisquam cupiditate quaerat necessitatibus eius voluptates
-            provident voluptatum.</h3>
-          <p className={styles.texts}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
+          <div>
+            <h3 className={styles.head}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Doloremque corrupti explicabo quas quisquam cupiditate quaerat necessitatibus eius voluptates
+              provident voluptatum.</h3>
+            <p className={styles.texts}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nisi!</p>
+          </div>
+
 
           <h2 className={styles.texts}>Our Products at a Glance</h2>
-          <div className={styles.cards}>
-            {loading ? <Loading /> : <ShowProducts />}
-          </div>
+
+          {loading ? <Loading /> : <ShowProducts />}
           {/* <div className={styles.cards}>
             {sliced.map((product) => (
               <HomePage key={product.id} product={product} />

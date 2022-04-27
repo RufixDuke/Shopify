@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import MainNav from '../../components/Jewelery/Layout/MainNav'
 import styles from '../../styles/Home.module.css'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { addCart } from '../../components/redux/action/index'
 

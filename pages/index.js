@@ -80,9 +80,9 @@ export default function Home() {
           {filter.map((product) => {
             return (
               <>
-                <div>
+                {/* <div> */}
                   <HomePage key={product.id} product={product} />
-                </div>
+                {/* </div> */}
               </>
             )
           })}

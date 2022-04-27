@@ -24,7 +24,7 @@ function OneElectronic({ electronic }) {
                             <h3>{electronic.title}</h3>
                             <p>Category: {electronic.category}</p>
                             <div>
-                                <p>${b}</p>
+                                <p>${b.toFixed(2)}</p>
                                 <p>${electronic.price}</p>
                             </div>
                             <button 

@@ -1,7 +1,11 @@
 function Cart() {
     return(
         <>
-            Carts
+            <div>
+                <div>
+                    <Image src/>
+                </div>
+            </div>
         </>
     )
 }

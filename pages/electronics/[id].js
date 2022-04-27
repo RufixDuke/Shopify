@@ -28,7 +28,7 @@ function OneElectronic({ electronic }) {
                                 <p>${electronic.price}</p>
                             </div>
                             <button 
-                            onClick={(product) => addProduct(product)}
+                            onClick={() => addProduct(product)}
                             className={styles.cart}>Add To Cart</button>
                         </div>
                     </div>

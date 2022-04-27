@@ -2,8 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Logo from "../../../public/—Pngtree—business logo design free logo_915991.png"
 import classes from './MainNav.module.css';
+import { useSelector } from 'react-redux'
 
 function MainNav() {
+    const state = useSelector((state) => state.handleCart)
+    
     return (
         <>
             <header className={classes.header}>
@@ -32,9 +35,9 @@ function MainNav() {
 
                 <div>
                     <nav className={classes.links}>
-                    <Link href='/cart'>
-                    <a className={classes.subnav}>Cart</a>
-                    </Link>
+                        <Link href='/cart'>
+                            <a className={classes.subnav}> Cart({state.length}) </a>
+                        </Link>
                         <Link href='/auth'>
                             <a className={classes.subnav}>Login | Sign Up</a>
                         </Link>

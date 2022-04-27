@@ -2,10 +2,17 @@ import Image from 'next/image'
 import MainNav from '../../components/Jewelery/Layout/MainNav'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
+import { useDispatch } from 'react-redux'
+import { addCart } from '../../components/redux/action/index'
 
 function OneElectronic({ electronic }) {
     let a = Number(electronic.price)
     let b = a * 0.85
+
+    const dispatch = useDispatch();
+    const addProduct = (product) => {
+        dispatch(addCart(product))
+    }
     return (
         <>
             <div>
@@ -20,9 +27,9 @@ function OneElectronic({ electronic }) {
                                 <p>${b}</p>
                                 <p>${electronic.price}</p>
                             </div>
-                            <Link href='/cart' passHref>
-                                <button className={styles.cart}>Add To Cart</button>
-                            </Link>
+                            <button 
+                            onClick={() => addProduct(product)}
+                            className={styles.cart}>Add To Cart</button>
                         </div>
                     </div>
 

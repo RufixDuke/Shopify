@@ -1,4 +1,4 @@
-const = [];
+const cart = [];
 
 const handleCart = (state = cart, action) => {
     const product = action.payload;
@@ -22,7 +22,10 @@ const handleCart = (state = cart, action) => {
                 if(exist1.qty === 1){
                     return state.filter((x) => x.id !== exist1.id)
                 } else {
-                    return state.map((x) => x.id === product.id ? {...x, x.qty - 1} : x);
+                    return state.map((x) => x.id === product.id ? {...x, qty: x.qty - 1} : x);
                 }
+                break;
+
+            default: break
     }
 }

@@ -16,7 +16,9 @@ function OneElectronic({ electronic }) {
     // const addProduct = (product) => {
     //     dispatch(addCart(product))
     // }
+
     const dispatch = useDispatch()
+
     const handleCart = (product) => {
         if (cartBtn === "Add to Cart") {
             dispatch(addItem(product))
@@ -41,8 +43,9 @@ function OneElectronic({ electronic }) {
                                 <p>${electronic.price}</p>
                             </div>
                             <button
-                                onClick={() => handleCart()}
-                                className={styles.cart}>{cartBtn}</button>
+                                onClick={() => handleCart(product)}
+                                className={styles.cart}>{cartBtn}
+                            </button>
                         </div>
                     </div>
 

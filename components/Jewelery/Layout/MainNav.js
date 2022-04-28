@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 function MainNav() {
     
-    const state = useSelector((state) => state.handleCart)
+    const state = useSelector((state) => state.handleCarts)
     
     return (
         <>

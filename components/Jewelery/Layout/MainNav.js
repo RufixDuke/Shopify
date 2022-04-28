@@ -38,9 +38,7 @@ function MainNav() {
                     <nav className={classes.links}>
                         <Link href='/cart'>
                             <>
-                                <div>
-                                    <a className={classes.subnav}>Cart {/* ({state.length}) */}</a>
-                                </div>
+                                <a className={classes.subnav}>Cart({state.length})</a>
                             </>
                         </Link>
                         <Link href='/auth'>
@@ -53,4 +51,4 @@ function MainNav() {
     )
 }
 
-export default MainNav
+export default MainNav;

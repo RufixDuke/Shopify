@@ -38,7 +38,10 @@ function MainNav() {
                     <nav className={classes.links}>
                         <Link href='/cart'>
                             <>
-                                <a className={classes.subnav}>Cart({state.length})</a>
+                                <Link href='/cart'>
+                                    <a className={classes.subnav}>Cart({state.length})</a>
+                                </Link>
+
                             </>
                         </Link>
                         <Link href='/auth'>

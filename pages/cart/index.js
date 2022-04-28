@@ -1,7 +1,28 @@
 import Image from 'next/image';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import {delItem} from '../../components/redux/action/index'
 
 function Cart() {
+    const state = useSelector((state) => state.handleCarts)
+    const dispatch = useDispatch()
+
+    const cartItems = (cartItem) => {
+        return (
+            <>
+                <div>
+                    <div>
+                        <button></button>
+                        <div className='row'>
+                            <div>
+                                <h3></h3>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
+    }
     return(
         <>
             <div>

@@ -5,9 +5,9 @@ import classes from './MainNav.module.css';
 import { useSelector } from 'react-redux'
 
 function MainNav() {
-    
+
     const state = useSelector((state) => state.handleCarts)
-    
+
     return (
         <>
             <header className={classes.header}>
@@ -36,8 +36,12 @@ function MainNav() {
 
                 <div>
                     <nav className={classes.links}>
-                        <Link href='/cart' passHref>
-                            <span className={classes.subnav}> Cart({state.length}) </span>
+                        <Link href='/cart'>
+                            <>
+                                <div>
+                                    <a className={classes.subnav}>Cart {/* ({state.length}) */}</a>
+                                </div>
+                            </>
                         </Link>
                         <Link href='/auth'>
                             <a className={classes.subnav}>Login | Sign Up</a>

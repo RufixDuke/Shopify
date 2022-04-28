@@ -2,16 +2,29 @@ import Image from 'next/image'
 import MainNav from '../../components/Jewelery/Layout/MainNav'
 import styles from '../../styles/Home.module.css'
 // import Link from 'next/link'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addCart } from '../../components/redux/action/index'
+import { addItem, delItem } from '../../components/redux/action/index'
 
 function OneElectronic({ electronic }) {
+    const [cartBtn, setCartBtn] = useState("Add to Cart")
+
     let a = Number(electronic.price)
     let b = a * 0.85
 
-    const dispatch = useDispatch();
-    const addProduct = (product) => {
-        dispatch(addCart(product))
+    // const dispatch = useDispatch();
+    // const addProduct = (product) => {
+    //     dispatch(addCart(product))
+    // }
+    const dispatch = useDispatch()
+    const handleCart = (product) => {
+        if (cartBtn === "Add to Cart") {
+            dispatch(addItem(product))
+            setCartBtn("Remove from Cart")
+        } else {
+            dispatch(delItem(product))
+            setCartBtn("Add to Cart")
+        }
     }
     return (
         <>
@@ -27,9 +40,9 @@ function OneElectronic({ electronic }) {
                                 <p>${b.toFixed(2)}</p>
                                 <p>${electronic.price}</p>
                             </div>
-                            <button 
-                            onClick={() => addProduct(product)}
-                            className={styles.cart}>Add To Cart</button>
+                            <button
+                                onClick={() => handleCart()}
+                                className={styles.cart}>{cartBtn}</button>
                         </div>
                     </div>
 

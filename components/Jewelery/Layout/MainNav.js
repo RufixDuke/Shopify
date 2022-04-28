@@ -36,8 +36,8 @@ function MainNav() {
 
                 <div>
                     <nav className={classes.links}>
-                        <Link href='/cart'>
-                            <a className={classes.subnav}> Cart({state.length}) </a>
+                        <Link href='/cart' passHref>
+                            <span className={classes.subnav}> Cart({state.length}) </span>
                         </Link>
                         <Link href='/auth'>
                             <a className={classes.subnav}>Login | Sign Up</a>

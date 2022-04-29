@@ -100,6 +100,10 @@
     transition: background-color 0.1s ease-in;
 }
 
+.flex h3 {
+    font-size: 14px;
+}
+
 .flex:hover {
     background-color: rgb(233, 239, 241);
 }
@@ -109,12 +113,7 @@
     font-weight: bold;
 }
 
-/* .payment {
-    line-height: 10px;
-} */
-
 .payment form {
-    /* display: block; */
     margin-top: 10px;
 }
 
@@ -123,12 +122,12 @@
 }
 
 .yess {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .yesss {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -166,4 +165,47 @@
 
 .card {
     display: flex;
+    justify-content: space-between;
+}
+
+.card input {
+    width: 100%;
+    padding: 7px 15px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 3px;
+}
+
+.payment hr {
+    width: 80%;
+    margin: 25px auto;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ye {
+    font-size: 15px;
+}
+
+.checkoutBtn {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 50%;
+    background-color: rgb(13, 150, 196);
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    transition: background-color 0.2s ease-in;
+    cursor: pointer;
+}
+
+.checkoutBtn:hover {
+    background-color: rgb(21, 141, 180);
+}
+
+.btn {
+    text-align: center;
 }

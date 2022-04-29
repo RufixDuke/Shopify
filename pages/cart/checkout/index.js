@@ -1,7 +1,26 @@
 import MainNav from "../../../components/Jewelery/Layout/MainNav";
 import classes from '../../../styles/checkout.module.css'
+import { useSelector } from 'react-redux'
+
 
 function Checkout() {
+    const state = useSelector((state) => state.handleCarts)
+
+    var shipping = 60;
+    var tax = 60
+    var total = 0;
+    const itemList = (item) => {
+        total = total + item.price
+        return (
+            <div className={classes.flex}>
+                <div>
+                    <h3>{item.title}</h3>
+                    {/* <p>Brief Description</p> */}
+                </div>
+                <p>${item.price}</p>
+            </div>
+        )
+    }
     return (
         <>
             <MainNav />
@@ -60,45 +79,16 @@ function Checkout() {
                 <div className={classes.checkout}>
                     <div className={classes.rows}>
                         <p className={classes.blue}>Your Cart</p>
-                        <p className={classes.bg}>3</p>
+                        <p className={classes.bg}>{state.length}</p>
                     </div>
 
                     <div>
                         <div className={classes.border}>
-                            <div className={classes.flex}>
-                                <div>
-                                    <h3>Product Name</h3>
-                                    <p>Brief Description</p>
-                                </div>
-                                <p>$12</p>
-                            </div>
-
-                            <div className={classes.flex}>
-                                <div>
-                                    <h3>Second Item</h3>
-                                    <p>Brief Description</p>
-                                </div>
-                                <p>$12</p>
-                            </div>
-
-                            <div className={classes.flex}>
-                                <div>
-                                    <h3>Third Item</h3>
-                                    <p>Brief Description</p>
-                                </div>
-                                <p>$12</p>
-                            </div>
-
-                            <div className={classes.flex}>
-                                <div>
-                                    <p>Total (USD)</p>
-                                </div>
-                                <p>$12</p>
-                            </div>
+                            {state.map(itemList)}
                         </div>
 
                         <div className={classes.payment}>
-                            <p className={classes.yesss}>Card Details</p>
+                            <h3 className={classes.yesss}>Card Details</h3>
                             <p className={classes.yess}>Card type</p>
 
                             <form>
@@ -132,47 +122,43 @@ function Checkout() {
                                 <div>
                                     <div className={classes.card}>
                                         <div>
-                                            <label>Expiration Date</label>
+                                            <p className={classes.yess}>Expiration Date</p>
                                             <input type="date" required />
                                         </div>
 
                                         <div>
-                                            <label>CVV</label>
+                                            <p className={classes.yess}>CVV</p>
                                             <input type="number" required />
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
-
                             </form>
+
                             <hr />
+
                             <div className={classes.summary}>
-                                <p>Subtotal</p>
-                                <p>$60.00</p>
+                                <p className={classes.yesss}>Subtotal</p>
+                                <p className={classes.yesss}>${Number(total)}</p>
                             </div>
 
                             <div className={classes.summary}>
-                                <p>Subtotal</p>
-                                <p>$60.00</p>
+                                <p className={classes.yesss}>Shipping</p>
+                                <p className={classes.yesss}>${shipping}</p>
                             </div>
 
                             <div className={classes.summary}>
-                                <p>Subtotal</p>
-                                <p>$60.00</p>
+                                <p className={classes.yesss}>Total(Tax Incl.)</p>
+                                <p className={classes.yesss}>${total + shipping}</p>
                             </div>
                         </div>
 
-                        <button className={classes.checkoutBtn}>
-                            <p>$850</p>
-                            <p>Checkout</p>
-                        </button>
+                        <div className={classes.btn}>
+                            <button className={classes.checkoutBtn}>
+                                <p>${total + shipping}</p>
+                                <p>Checkout &rarr;</p>
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>

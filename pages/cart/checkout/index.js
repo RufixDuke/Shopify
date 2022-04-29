@@ -11,32 +11,32 @@ function Checkout() {
                     <div className={classes.name}>
                         <div>
                             <label>First Name</label>
-                            <input type="text" required />
+                            <input type="text" required className={classes.input1} />
                         </div>
                         <div>
                             <label>Last Name</label>
-                            <input type="text" required />
+                            <input type="text" required className={classes.input2} />
                         </div>
                     </div>
 
                     <div className={classes.block}>
                         <label>Username</label>
-                        <input type="text" placeholder="Username" />
+                        <input type="text" placeholder="Username" className={classes.input3} />
                     </div>
 
-                    <div>
+                    <div className={classes.block}>
                         <label>Email <span>(Optional)</span></label>
-                        <input type="email" placeholder="you@example.com" />
+                        <input type="email" placeholder="you@example.com" className={classes.input3} />
                     </div>
 
-                    <div>
+                    <div className={classes.block}>
                         <label>Address</label>
-                        <input type="text" placeholder="1234 Main St" required />
+                        <input type="text" placeholder="1234 Main St" required className={classes.input3} />
                     </div>
 
-                    <div>
+                    <div className={classes.block}>
                         <label>Address 2 <span>(Optional)</span></label>
-                        <input type="text" placeholder="Apartment or suite" />
+                        <input type="text" placeholder="Apartment or suite" className={classes.input3} />
                     </div>
 
                     <div className={classes.row}>
@@ -58,9 +58,9 @@ function Checkout() {
                 </div>
 
                 <div className={classes.checkout}>
-                    <div>
-                        <h3>Your Cart</h3>
-                        <p>3</p>
+                    <div className={classes.rows}>
+                        <p>Your Cart</p>
+                        <p className={classes.bg}>3</p>
                     </div>
 
                     <div>

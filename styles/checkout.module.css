@@ -1,30 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 .container {
-    padding: 40px;
+    padding: 50px 100px;
     width: auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     font-family: 'Ubuntu', 'san-serif';
 }
 
 .billing {
     line-height: 20px;
+    width: 60%;
 }
+
+.checkout {
+    width: 40%;
+}
+
+/* .name {
+    display: flex;
+    justify-content: space-between;
+} */
+
+.input1 {
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.input2 {
+    width: 90%;
+}
+
+/* .input3 {
+    width: fit-content;
+} */
+
 
 .block {
-        display: block;
+    margin-top: 12px;
 }
 
-.name {
-    display: flex;
+.block input {
+    width: 90%;
+}
+
+.block span {
+    color: rgb(199, 199, 199);
+}
+
+.block input::placeholder {
+    color: rgb(184, 184, 184);
 }
 
 .billing input {
     /* width: 200px; */
     margin-top: 10px;
-    padding: 7px 20px;
+    padding: 9px 15px;
     border: 1px solid rgb(199, 199, 199);
-    border-radius: 5px;
+    border-radius: 3px;
+    display: flex;
 }
 
+.billing input:focus {
+    outline: 0;
+}
+
+.row {
+    display: flex;
+    margin-top: 10px;
+}
+
+.row input {
+    margin-right: 10px;
+    width: 92%;
+}
+
+.rows {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bg {
+    background-color: lightblue;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.border {
+    border: 1px solid rgb(199, 199, 199);
+    line-height: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 10px 5px 10px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.flex:hover {
+    background-color: rgb(201, 221, 228);
+}

@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import MainNav from '../../components/Jewelery/Layout/MainNav'
 import styles from '../../styles/Home.module.css'
-// import Link from 'next/link'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addItem, delItem } from '../../components/redux/action/index'
@@ -12,22 +11,18 @@ function OneElectronic({ electronic }) {
     let a = Number(electronic.price)
     let b = a * 0.85
 
-    // const dispatch = useDispatch();
-    // const addProduct = (product) => {
-    //     dispatch(addCart(product))
-    // }
-
     const dispatch = useDispatch()
 
-    const handleCart = (product) => {
+    const handleCart = (electronic) => {
         if (cartBtn === "Add to Cart") {
-            dispatch(addItem(product))
+            dispatch(addItem(electronic))
             setCartBtn("Remove from Cart")
         } else {
-            dispatch(delItem(product))
+            dispatch(delItem(electronic))
             setCartBtn("Add to Cart")
         }
     }
+    
     return (
         <>
             <div>
@@ -43,16 +38,13 @@ function OneElectronic({ electronic }) {
                                 <p>${electronic.price}</p>
                             </div>
                             <button
-                                onClick={() => handleCart(product)}
+                                onClick={() => handleCart(electronic)}
                                 className={styles.cart}>{cartBtn}
                             </button>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </>
     )
 }

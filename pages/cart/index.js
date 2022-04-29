@@ -47,7 +47,7 @@ function Cart() {
         return (
             <div>
                 <div>
-                    <Link href='/checkout'>
+                    <Link href='/cart/checkout'>
                         <a className='link'>Proceed To Checkout</a>
                     </Link>
                 </div>

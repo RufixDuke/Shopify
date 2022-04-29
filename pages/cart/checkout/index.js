@@ -7,14 +7,14 @@ function Checkout() {
     const state = useSelector((state) => state.handleCarts)
 
     var shipping = 60;
-    var tax = 60
     var total = 0;
     const itemList = (item) => {
         total = total + item.price
+        let sliced = item.title.slice(0, 50)
         return (
             <div className={classes.flex}>
                 <div>
-                    <h3>{item.title}</h3>
+                    <h3>{sliced}</h3>
                     {/* <p>Brief Description</p> */}
                 </div>
                 <p>${item.price}</p>

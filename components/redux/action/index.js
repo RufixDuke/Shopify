@@ -18,3 +18,10 @@ export const minusPrice = (product) => {
         payload: product
     }
 }
+
+export const addPrice = (product) => {
+    return {
+        type: "ADD",
+        payload: product
+    }
+}

@@ -1,38 +1,39 @@
+import MainNav from "../../../components/Jewelery/Layout/MainNav";
+
 function Checkout() {
     return (
         <>
+            <MainNav />
             <div className="container">
-                <div>
-                    <div>
-                        <h4>
-                            <span>Your Cart</span>
-                            <span>3</span>
-                        </h4>
-
-                        <ul>
-                            <li>
-                                <div>
-                                    <h6>Product Name</h6>
-                                    <small>Brief Description</small>
-                                </div>
-                                <span>$12</span>
-                            </li>
-                            <li>
-                                <div>
-                                    <h6>Second Poduct</h6>
-                                    <small>Brief Description</small>
-                                </div>
-                                <span>$8</span>
-                            </li>
-                            <li>
-                                <div>
-                                    <h6>Third Product</h6>
-                                    <small>Brief Description</small>
-                                </div>
-                                <span>$5</span>
-                            </li>
-                        </ul>
+                <div className="billing">
+                    <h3>Billing Address</h3>
+                    <div className="name">
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" required />
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" required />
+                        </div>
                     </div>
+
+                    <div>
+                        <label>Username</label>
+                        <input type="text" placeholder="Username" />
+                    </div>
+
+                    <div>
+                        <label>Email <span>(Optional)</span></label>
+                        <input type="email" placeholder="you@example.com" />
+                    </div>
+
+                    <div>
+                        <label>Address</label>
+                        <input type="text" placeholder="1234 Main St" required />
+                    </div>
+
+                    <label>Address 2 <span>(Optional)</span></label>
                 </div>
             </div>
         </>

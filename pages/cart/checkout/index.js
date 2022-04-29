@@ -59,7 +59,7 @@ function Checkout() {
 
                 <div className={classes.checkout}>
                     <div className={classes.rows}>
-                        <p>Your Cart</p>
+                        <p className={classes.blue}>Your Cart</p>
                         <p className={classes.bg}>3</p>
                     </div>
 

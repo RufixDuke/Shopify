@@ -97,8 +97,14 @@
     justify-content: space-between;
     padding: 1px 10px 5px 10px;
     border-bottom: 1px solid rgb(199, 199, 199);
+    transition: background-color 0.1s ease-in;
 }
 
 .flex:hover {
-    background-color: rgb(201, 221, 228);
+    background-color: rgb(233, 239, 241);
+}
+
+.blue {
+    color: rgb(13, 150, 196);
+    font-weight: bold;
 }

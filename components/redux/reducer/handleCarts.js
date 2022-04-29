@@ -20,10 +20,10 @@ const handleCart = (state = cart, action) => {
             if (exist) {
                 // Increase the Quantity
                 return state.map((x) =>
-                    x.id === action.payload.id ? { ...x, qty: 1 } : x
+                    x.id === action.payload.id ? { ...x, qty: x.qty + 1 } : x
                 );
             } else {
-                const product = action.payload;
+                // const product = action.payload;
                 return [
                     ...state,
                     {
@@ -40,7 +40,7 @@ const handleCart = (state = cart, action) => {
                 return state.filter((x) => x.id !== exist1.id);
             } else {
                 return state.map((x) =>
-                    x.id === action.payload.id ? { ...x, qty: x.qty - 1 } : x
+                    x.id === action.payload.id ? { ...x, qty: x - 1 } : x
                 );
             }
             

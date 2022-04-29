@@ -1,7 +1,6 @@
 const cart = [];
 
 const handleCart = (state = cart, action) => {
-    // const product = action.payload;
     switch (action.type) {
         case "ADDITEM": return [
             ...state,
@@ -18,13 +17,11 @@ const handleCart = (state = cart, action) => {
         case "ADD":
             const exist = state.find((x) => x.id === action.payload.id);
             if (exist) {
-                // Increase the Quantity
                 return state.map((x) =>
                     x.id === action.payload.id ? { ...x, qty: Number(x.price) + 1 } : x
                 );
                 
             } else {
-                // const product = action.payload;
                 return [
                     ...state,
                     {
@@ -45,10 +42,7 @@ const handleCart = (state = cart, action) => {
                 );
             }
             
-
-
         default: return state;
-        // break;
     }
 }
 

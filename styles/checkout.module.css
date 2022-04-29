@@ -108,3 +108,62 @@
     color: rgb(13, 150, 196);
     font-weight: bold;
 }
+
+/* .payment {
+    line-height: 10px;
+} */
+
+.payment form {
+    /* display: block; */
+    margin-top: 10px;
+}
+
+.payment p {
+    font-size: 12px;
+}
+
+.yess {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.yesss {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.type {
+    margin-bottom: 10px;
+}
+
+.type label {
+    font-size: 12px;
+}
+
+.det div {
+    display: block;
+}
+
+.yes p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.det input {
+    width: 100%;
+    padding: 7px 15px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 3px;
+}
+
+.det {
+    margin-bottom: 10px;
+}
+
+.yes {
+    margin-bottom: 10px;
+}
+
+.card {
+    display: flex;
+}

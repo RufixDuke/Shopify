@@ -98,34 +98,59 @@ function Checkout() {
                         </div>
 
                         <div className={classes.payment}>
-                            <h3>Card Details</h3>
-                            <p>Card type</p>
+                            <p className={classes.yesss}>Card Details</p>
+                            <p className={classes.yess}>Card type</p>
+
                             <form>
-                                <input type="radio" />
-                                <label>Credit Card</label>
-
-                                <input type="radio" />
-                                <label>Debit Card</label>
-
-                                <input type="radio" />
-                                <label>PayPal</label>
-
-                                <label>Name on Card</label>
-                                <input type="text" required />
-
-                                <label>Card Number</label>
-                                <input type="number" required />
-                                <div>
+                                <div className={classes.type}>
                                     <div>
-                                        <label>Expiration Date</label>
-                                        <input type="date" required />
+                                        <input type="radio" />
+                                        <label>Credit Card</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" />
+                                        <label>Debit Card</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" />
+                                        <label>PayPal</label>
+                                    </div>
+                                </div>
+
+                                <div className={classes.det}>
+                                    <div className={classes.yes}>
+                                        <p>Name on Card</p>
+                                        <input type="text" required />
                                     </div>
 
-                                    <div>
-                                        <label>CVV</label>
+                                    <div className={classes.yes}>
+                                        <p>Card Number</p>
                                         <input type="number" required />
                                     </div>
                                 </div>
+
+                                <div>
+                                    <div className={classes.card}>
+                                        <div>
+                                            <label>Expiration Date</label>
+                                            <input type="date" required />
+                                        </div>
+
+                                        <div>
+                                            <label>CVV</label>
+                                            <input type="number" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
                             </form>
                             <hr />
                             <div className={classes.summary}>

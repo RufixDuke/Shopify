@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux'
-import { delItem } from '../../components/redux/action/index'
+import { delItem, minusPrice } from '../../components/redux/action/index'
 import MainNav from '../../components/Jewelery/Layout/MainNav';
 import Link from 'next/link';
 
@@ -10,6 +10,10 @@ function Cart() {
 
     const handleClose = (item) => {
         dispatch(delItem(item))
+    }
+
+    const minusBtn = (item) => {
+        dispatch(minusPrice(item))
     }
 
     const cartItems = (cartItem) => {
@@ -24,6 +28,11 @@ function Cart() {
                         <div>
                             <h3>{cartItem.title}</h3>
                             <p>${cartItem.price}</p>
+                        </div>
+
+                        <span> 0 </span>
+                        <div>
+                            <button onClick={() => minusBtn(cartItem.price)}> - </button>
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,9 @@ const handleCart = (state = cart, action) => {
                 return x.id !== action.payload.id
             })
             break;
+        case "MINUS":
+                return state = state + action.payload.id;
+                break
 
         default: return state;
         // break;

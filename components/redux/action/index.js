@@ -11,3 +11,10 @@ export const delItem = (product) => {
         payload: product
     }
 }
+
+export const minusPrice = (product) => {
+    return {
+        type: "MINUS",
+        payload: product
+    }
+}

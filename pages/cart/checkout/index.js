@@ -1,13 +1,14 @@
 import MainNav from "../../../components/Jewelery/Layout/MainNav";
+import classes from '../../../styles/checkout.module.css'
 
 function Checkout() {
     return (
         <>
             <MainNav />
-            <div className="container">
-                <div className="billing">
+            <div className={classes.container}>
+                <div className={classes.billing}>
                     <h3>Billing Address</h3>
-                    <div className="name">
+                    <div className={classes.name}>
                         <div>
                             <label>First Name</label>
                             <input type="text" required />
@@ -18,7 +19,7 @@ function Checkout() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className={classes.block}>
                         <label>Username</label>
                         <input type="text" placeholder="Username" />
                     </div>
@@ -38,7 +39,7 @@ function Checkout() {
                         <input type="text" placeholder="Apartment or suite" />
                     </div>
 
-                    <div className="row">
+                    <div className={classes.row}>
                         <div>
                             <label>Country</label>
                             <input type="text" required />
@@ -56,15 +57,15 @@ function Checkout() {
                     </div>
                 </div>
 
-                <div className="checkout">
+                <div className={classes.checkout}>
                     <div>
                         <h3>Your Cart</h3>
                         <p>3</p>
                     </div>
 
                     <div>
-                        <div className="border">
-                            <div className="flex">
+                        <div className={classes.border}>
+                            <div className={classes.flex}>
                                 <div>
                                     <h3>Product Name</h3>
                                     <p>Brief Description</p>
@@ -72,7 +73,7 @@ function Checkout() {
                                 <p>$12</p>
                             </div>
 
-                            <div className="flex">
+                            <div className={classes.flex}>
                                 <div>
                                     <h3>Second Item</h3>
                                     <p>Brief Description</p>
@@ -80,7 +81,7 @@ function Checkout() {
                                 <p>$12</p>
                             </div>
 
-                            <div className="flex">
+                            <div className={classes.flex}>
                                 <div>
                                     <h3>Third Item</h3>
                                     <p>Brief Description</p>
@@ -88,7 +89,7 @@ function Checkout() {
                                 <p>$12</p>
                             </div>
 
-                            <div className="flex">
+                            <div className={classes.flex}>
                                 <div>
                                     <p>Total (USD)</p>
                                 </div>
@@ -96,7 +97,7 @@ function Checkout() {
                             </div>
                         </div>
 
-                        <div className="payment">
+                        <div className={classes.payment}>
                             <h3>Card Details</h3>
                             <p>Card type</p>
                             <form>
@@ -127,21 +128,26 @@ function Checkout() {
                                 </div>
                             </form>
                             <hr />
-                            <div className="summary">
+                            <div className={classes.summary}>
                                 <p>Subtotal</p>
-                                <p>$&60.00</p>
+                                <p>$60.00</p>
                             </div>
 
-                            <div className="summary">
+                            <div className={classes.summary}>
                                 <p>Subtotal</p>
-                                <p>$&60.00</p>
+                                <p>$60.00</p>
                             </div>
 
-                            <div className="summary">
+                            <div className={classes.summary}>
                                 <p>Subtotal</p>
-                                <p>$&60.00</p>
+                                <p>$60.00</p>
                             </div>
                         </div>
+
+                        <button className={classes.checkoutBtn}>
+                            <p>$850</p>
+                            <p>Checkout</p>
+                        </button>
                     </div>
                 </div>
             </div>

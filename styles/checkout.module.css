@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+.container {
+    padding: 40px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'Ubuntu', 'san-serif';
+}
+
+.billing {
+    line-height: 20px;
+}
+
+.block {
+        display: block;
+}
+
+.name {
+    display: flex;
+}
+
+.billing input {
+    /* width: 200px; */
+    margin-top: 10px;
+    padding: 7px 20px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 5px;
+}
+

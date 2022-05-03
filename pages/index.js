@@ -66,12 +66,8 @@ export default function Home() {
     return (
       <>
         <div className={styles.buttons}>
-          <button 
-          className={styles.btn2} 
-          onClick={() => setFilter(data)}>All</button>
-          <button 
-          className={styles.btn2}
-          onClick={() => filterProduct("electronics")}>Electronics</button>
+          <button className={styles.btn2} onClick={() => setFilter(data)}>All</button>
+          <button className={styles.btn2} onClick={() => filterProduct("electronics")}>Electronics</button>
           <button className={styles.btn2} onClick={() => filterProduct("jewelery")}>Jewelery</button>
           <button className={styles.btn2} onClick={() => filterProduct("men's clothing")}>Mens Clothing</button>
           <button className={styles.btn2} onClick={() => filterProduct("women's clothing")}>Women Clothing</button>
@@ -80,14 +76,11 @@ export default function Home() {
           {filter.map((product) => {
             return (
               <>
-                {/* <div> */}
-                  <HomePage key={product.id} product={product} />
-                {/* </div> */}
+                <HomePage key={product.id} product={product} />
               </>
             )
           })}
         </div>
-
       </>
     )
   }

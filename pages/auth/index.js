@@ -90,31 +90,31 @@ function Authentication() {
     };
 
     const auth = (email, password, isSignup) => {
-            // authStart();
-            const authData = {
-                email: email,
-                password: password,
-                returnSecureToken: true
-            };
+        // authStart();
+        const authData = {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        };
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
-            if (!isSignup) {
-                url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
-            }
-            axios.post(url, authData)
-                .then(response => {
-                    // return console.log(response);
-                    const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
-                    localStorage.setItem('token', response.data.idToken);
-                    localStorage.setItem('expirationDate', expirationDate);
-                    localStorage.setItem('userId', response.data.localId);
-                    authSuccess(response.data.idToken, response.data.localId);
-                    checkAuthTimeout(response.data.expiresIn);
-                })
-                // .catch(err => {
-                //     authFail(err.response.data.error);
-                // });
+        if (!isSignup) {
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDZREZXdHSSZ2Nud2uk7FxLCxcMW4_0eUY';
         }
-    
+        axios.post(url, authData)
+            .then(response => {
+                // return console.log(response);
+                const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+                localStorage.setItem('token', response.data.idToken);
+                localStorage.setItem('expirationDate', expirationDate);
+                localStorage.setItem('userId', response.data.localId);
+                authSuccess(response.data.idToken, response.data.localId);
+                checkAuthTimeout(response.data.expiresIn);
+            })
+        // .catch(err => {
+        //     authFail(err.response.data.error);
+        // });
+    }
+
     const checkValidity = (value, rules) => {
         let isValid = true;
         if (!rules) {
@@ -209,9 +209,11 @@ function Authentication() {
                     btnType="Danger">SWITCH TO {isSignup ? 'SIGN UP' : 'SIGN IN'}
                 </Button>
 
-                {/* <div>
-                    <Link href='/'>Home</Link>
-                </div> */}
+                <div>
+                    <Link href='/'>
+                        <strong>Home</strong>
+                    </Link>
+                </div>
             </div>
         </>
     )

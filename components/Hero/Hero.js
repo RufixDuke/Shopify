@@ -20,6 +20,7 @@ function Hero() {
                     delay: 3500,
                     disableOnInteraction: false
                 }}
+                loop={true}
                 modules={[Autoplay, EffectFade]}
                 className={styles.mySwiper}
             >

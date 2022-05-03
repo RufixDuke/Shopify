@@ -1,9 +1,6 @@
 import Image from "next/image"
 import styles from '../../../styles/Home.module.css'
 import Link from "next/link";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 // import styles from '../../styles/Home.module.css'
 
 function Picture({ picture }) {
@@ -17,10 +14,6 @@ function Picture({ picture }) {
                     <Link href='/electronics' passHref>
                         <button className={styles.btn}>
                             Shop Now
-                            <FontAwesomeIcon
-                                icon={faArrowAltCircleRight}
-                                style={{ fontSize: 50, marginLeft: 10, color: 'yellow' }}
-                            />
                         </button>
                     </Link>
                 </div>

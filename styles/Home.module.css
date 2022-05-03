@@ -73,7 +73,8 @@
 .btn {
   background-color: rgb(5, 40, 63);
   color: white;
-  padding: 7px 25px;
+  padding: 10px 25px;
+  font-size: 16px;
   border: 0;
   border-radius: 3px;
   transition: transform 0.3s ease;

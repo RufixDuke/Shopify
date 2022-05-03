@@ -210,10 +210,6 @@
     text-align: center;
 }
 
-.rows {
-    background-color: gray;
-}
-
 .button {
     padding: 10px 20px;
     border: 0;
@@ -228,6 +224,7 @@
 .cancel {
     object-fit: contain;
 }
+
 .bgs {
     display: flex;
     align-items: center;

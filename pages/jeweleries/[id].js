@@ -36,7 +36,7 @@ function JeweleryOne({ jewelery }) {
                             <p>Category: {jewelery.category}</p>
                             <div>
                                 <p>${b.toFixed(2)}</p>
-                                <p>${jewelery.price}</p>
+                                <p><strike>${jewelery.price}</strike></p>
                             </div>
                             <button
                                 onClick={() => handleCart(jewelery)}

@@ -35,7 +35,7 @@ function OneElectronic({ electronic }) {
                             <p>Category: {electronic.category}</p>
                             <div>
                                 <p>${b.toFixed(2)}</p>
-                                <p>${electronic.price}</p>
+                                <p><strike>${electronic.price}</strike></p>
                             </div>
                             <button
                                 onClick={() => handleCart(electronic)}

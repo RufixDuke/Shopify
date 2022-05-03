@@ -4,7 +4,7 @@ import styles from './men.module.css'
 
 function Men({ men }) {
 
-    let a = electronic.price
+    let a = men.price
     let b = Number(a)
     let c = b * 0.85
 
